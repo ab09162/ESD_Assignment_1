@@ -1,0 +1,90 @@
+{
+  "verified_utc": "2026-09-21T09:23:01.842980+00:00",
+  "request_id": "verify-eb604ba0-b5a9-49fb-b080-f2c46ad17542",
+  "stored_log": {
+    "_index": "campus-logs-000001",
+    "_id": "M9lGw6ABWC29OxUMnAr8",
+    "_score": 0.0,
+    "_source": {
+      "@timestamp": "2026-09-21T09:22:53.777Z",
+      "operation": "http_request",
+      "method": "POST",
+      "route": "/bookings",
+      "request_id": "verify-eb604ba0-b5a9-49fb-b080-f2c46ad17542",
+      "timestamp": "2026-09-21T09:22:53.777848+00:00",
+      "agent": {
+        "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+        "name": "c8800ac23c1f",
+        "type": "filebeat",
+        "version": "8.19.0"
+      },
+      "message": "request_completed",
+      "duration_ms": 12.034,
+      "status_code": 201,
+      "log": {
+        "offset": 2636,
+        "file": {
+          "path": "/var/log/campus/app.jsonl",
+          "device_id": "2096",
+          "inode": "55094"
+        }
+      },
+      "service": "campus-booking",
+      "severity": "INFO"
+    }
+  },
+  "metric": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "http_request_duration_seconds_count",
+          "instance": "app:8000",
+          "job": "campus-app",
+          "method": "POST",
+          "route": "/bookings",
+          "service": "campus-booking",
+          "status": "201"
+        },
+        "value": [
+          1789982581.84,
+          "2"
+        ]
+      }
+    ]
+  },
+  "ilm": {
+    "campus-logs-000001": {
+      "index": "campus-logs-000001",
+      "managed": true,
+      "policy": "campus-logs-7d",
+      "index_creation_date_millis": 1789968618692,
+      "time_since_index_creation": "3.87h",
+      "lifecycle_date_millis": 1789968618692,
+      "age": "3.87h",
+      "phase": "hot",
+      "phase_time_millis": 1789968618805,
+      "action": "rollover",
+      "action_time_millis": 1789968619005,
+      "step": "check-rollover-ready",
+      "step_time_millis": 1789968619005,
+      "phase_execution": {
+        "policy": "campus-logs-7d",
+        "phase_definition": {
+          "min_age": "0ms",
+          "actions": {
+            "rollover": {
+              "max_age": "1d",
+              "max_primary_shard_docs": 200000000,
+              "min_docs": 1,
+              "max_primary_shard_size": "1gb"
+            }
+          }
+        },
+        "version": 1,
+        "modified_date_in_millis": 1789968618363
+      },
+      "skip": false
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "verified_utc": "2026-09-21T15:54:30.699161+00:00",
+  "table_plugin_entries": 1,
+  "dashboard_panel_types": [
+    "timeseries"
+  ],
+  "all_dashboard_panel_plugins_registered": true,
+  "kibana_alerts_client_api_status": 200,
+  "kibana_rules_count": 0
+}

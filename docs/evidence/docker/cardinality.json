@@ -1,0 +1,97 @@
+{
+  "verified_utc": "2026-09-21T15:50:08.534485+00:00",
+  "run": "cardinality-20260921T154916Z",
+  "counts": [
+    {
+      "high_cardinality": "true",
+      "accepted": 100,
+      "series": 100,
+      "utc": "2026-09-21T15:49:30.6012331Z"
+    },
+    {
+      "high_cardinality": "false",
+      "accepted": 100,
+      "series": 1,
+      "utc": "2026-09-21T15:49:39.9523111Z"
+    }
+  ],
+  "queries": [
+    {
+      "utc": "2026-09-21T15:49:30.6012331Z",
+      "expression": "count(demo_requests_total{job=\"cardinality-demo\"})",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1790005770.601,
+                "100"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "utc": "2026-09-21T15:49:30.6012331Z",
+      "expression": "sum(demo_requests_total{job=\"cardinality-demo\"})",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1790005770.601,
+                "100"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "utc": "2026-09-21T15:49:39.9523111Z",
+      "expression": "count(demo_requests_total{job=\"cardinality-demo\"})",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1790005779.952,
+                "1"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "utc": "2026-09-21T15:49:39.9523111Z",
+      "expression": "sum(demo_requests_total{job=\"cardinality-demo\"})",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1790005779.952,
+                "100"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "low_mode_101st_status": 429
+}

@@ -1,0 +1,442 @@
+[
+  {
+    "vus": 10,
+    "observed_plateau_start": "2026-09-21T09:38:20.296000+00:00",
+    "sample_start": "2026-09-21T09:39:20.296000+00:00",
+    "sample_end": "2026-09-21T09:40:15.296000+00:00",
+    "metrics": {
+      "vus": {
+        "samples": 12,
+        "mean": 10.0,
+        "max": 10.0
+      },
+      "requests_per_second": {
+        "samples": 12,
+        "mean": 153.5817945269163,
+        "max": 155.52605738807873
+      },
+      "server_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "http_p95_seconds_1m": {
+        "samples": 12,
+        "mean": 0.04867234045563484,
+        "max": 0.04970105772678379
+      },
+      "http_p99_seconds_1m": {
+        "samples": 12,
+        "mean": 0.08524975022652666,
+        "max": 0.08932758620689654
+      },
+      "in_flight": {
+        "samples": 12,
+        "mean": 5.0,
+        "max": 10.0
+      },
+      "vm_cpu_percent": {
+        "samples": 12,
+        "mean": 8.500945623940636,
+        "max": 8.591164490671755
+      },
+      "vm_memory_used_bytes": {
+        "samples": 12,
+        "mean": 3286269952.0,
+        "max": 3304722432.0
+      },
+      "vm_memory_percent": {
+        "samples": 12,
+        "mean": 19.767854986978495,
+        "max": 19.878851939182052
+      },
+      "app_rss_bytes": {
+        "samples": 12,
+        "mean": 83488768.0,
+        "max": 83554304.0
+      },
+      "app_cpu_cores": {
+        "samples": 12,
+        "mean": 0.5318402360413257,
+        "max": 0.5383832139350518
+      },
+      "db_average_seconds": {
+        "samples": 12,
+        "mean": 0.018052264501060112,
+        "max": 0.019067843689710574
+      },
+      "faults_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "booking_conflicts_per_second": {
+        "samples": 12,
+        "mean": 5.7899642468664325,
+        "max": 5.855290673358429
+      },
+      "logs_dropped_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "log_sink_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    }
+  },
+  {
+    "vus": 25,
+    "observed_plateau_start": "2026-09-21T09:40:50.296000+00:00",
+    "sample_start": "2026-09-21T09:41:50.296000+00:00",
+    "sample_end": "2026-09-21T09:42:45.296000+00:00",
+    "metrics": {
+      "vus": {
+        "samples": 12,
+        "mean": 25.0,
+        "max": 25.0
+      },
+      "requests_per_second": {
+        "samples": 12,
+        "mean": 215.71995944074934,
+        "max": 220.3694948539841
+      },
+      "server_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "http_p95_seconds_1m": {
+        "samples": 12,
+        "mean": 0.23014707721553962,
+        "max": 0.2337035661218424
+      },
+      "http_p99_seconds_1m": {
+        "samples": 12,
+        "mean": 0.4071523128022045,
+        "max": 0.4201158038147139
+      },
+      "in_flight": {
+        "samples": 12,
+        "mean": 17.083333333333332,
+        "max": 25.0
+      },
+      "vm_cpu_percent": {
+        "samples": 12,
+        "mean": 12.575310702931295,
+        "max": 12.745026730188712
+      },
+      "vm_memory_used_bytes": {
+        "samples": 12,
+        "mean": 3302266197.3333335,
+        "max": 3314847744.0
+      },
+      "vm_memory_percent": {
+        "samples": 12,
+        "mean": 19.864076984168047,
+        "max": 19.93975859086844
+      },
+      "app_rss_bytes": {
+        "samples": 12,
+        "mean": 94618965.33333333,
+        "max": 95875072.0
+      },
+      "app_cpu_cores": {
+        "samples": 12,
+        "mean": 0.9487392316922377,
+        "max": 0.9584681965305308
+      },
+      "db_average_seconds": {
+        "samples": 12,
+        "mean": 0.05617145738674014,
+        "max": 0.057064263275941524
+      },
+      "faults_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "booking_conflicts_per_second": {
+        "samples": 12,
+        "mean": 8.144693103854705,
+        "max": 8.309997454267739
+      },
+      "logs_dropped_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "log_sink_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    }
+  },
+  {
+    "vus": 50,
+    "observed_plateau_start": "2026-09-21T09:43:25.296000+00:00",
+    "sample_start": "2026-09-21T09:44:25.296000+00:00",
+    "sample_end": "2026-09-21T09:45:15.296000+00:00",
+    "metrics": {
+      "vus": {
+        "samples": 11,
+        "mean": 50.0,
+        "max": 50.0
+      },
+      "requests_per_second": {
+        "samples": 11,
+        "mean": 376.35985149824904,
+        "max": 378.6776739280649
+      },
+      "server_errors_per_second": {
+        "samples": 11,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "http_p95_seconds_1m": {
+        "samples": 11,
+        "mean": 0.23033106487520952,
+        "max": 0.2312772661173049
+      },
+      "http_p99_seconds_1m": {
+        "samples": 11,
+        "mean": 0.27382531194402887,
+        "max": 0.29611553784860584
+      },
+      "in_flight": {
+        "samples": 11,
+        "mean": 33.63636363636363,
+        "max": 40.0
+      },
+      "vm_cpu_percent": {
+        "samples": 11,
+        "mean": 14.382403104268654,
+        "max": 14.436539685425897
+      },
+      "vm_memory_used_bytes": {
+        "samples": 11,
+        "mean": 3331562402.909091,
+        "max": 3346063360.0
+      },
+      "vm_memory_percent": {
+        "samples": 11,
+        "mean": 20.040302051478125,
+        "max": 20.127529461621663
+      },
+      "app_rss_bytes": {
+        "samples": 11,
+        "mean": 99342522.18181819,
+        "max": 99545088.0
+      },
+      "app_cpu_cores": {
+        "samples": 11,
+        "mean": 1.0457644942440256,
+        "max": 1.046295959559224
+      },
+      "db_average_seconds": {
+        "samples": 11,
+        "mean": 0.07315585731203042,
+        "max": 0.07419345549755911
+      },
+      "faults_per_second": {
+        "samples": 11,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "booking_conflicts_per_second": {
+        "samples": 11,
+        "mean": 14.204597897047568,
+        "max": 14.310391853804893
+      },
+      "logs_dropped_per_second": {
+        "samples": 11,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "log_sink_errors_per_second": {
+        "samples": 11,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    }
+  },
+  {
+    "vus": 100,
+    "observed_plateau_start": "2026-09-21T09:45:50.296000+00:00",
+    "sample_start": "2026-09-21T09:46:50.296000+00:00",
+    "sample_end": "2026-09-21T09:47:45.296000+00:00",
+    "metrics": {
+      "vus": {
+        "samples": 12,
+        "mean": 100.0,
+        "max": 100.0
+      },
+      "requests_per_second": {
+        "samples": 12,
+        "mean": 357.0101586484056,
+        "max": 369.08138773728996
+      },
+      "server_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "http_p95_seconds_1m": {
+        "samples": 12,
+        "mean": 0.6939259036734421,
+        "max": 0.7219060945273621
+      },
+      "http_p99_seconds_1m": {
+        "samples": 12,
+        "mean": 0.9560346742416028,
+        "max": 0.9628269109286159
+      },
+      "in_flight": {
+        "samples": 12,
+        "mean": 85.25,
+        "max": 91.0
+      },
+      "vm_cpu_percent": {
+        "samples": 12,
+        "mean": 14.267228261262114,
+        "max": 14.32175652332054
+      },
+      "vm_memory_used_bytes": {
+        "samples": 12,
+        "mean": 3366991530.6666665,
+        "max": 3386392576.0
+      },
+      "vm_memory_percent": {
+        "samples": 12,
+        "mean": 20.25341840225164,
+        "max": 20.37012124661527
+      },
+      "app_rss_bytes": {
+        "samples": 12,
+        "mean": 102865578.66666667,
+        "max": 103084032.0
+      },
+      "app_cpu_cores": {
+        "samples": 12,
+        "mean": 1.0438796128621262,
+        "max": 1.0441139033349107
+      },
+      "db_average_seconds": {
+        "samples": 12,
+        "mean": 0.19671538463424024,
+        "max": 0.2006843271293779
+      },
+      "faults_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "booking_conflicts_per_second": {
+        "samples": 12,
+        "mean": 13.475426390077041,
+        "max": 13.946468834097026
+      },
+      "logs_dropped_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "log_sink_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    }
+  },
+  {
+    "vus": 200,
+    "observed_plateau_start": "2026-09-21T09:48:20.296000+00:00",
+    "sample_start": "2026-09-21T09:49:20.296000+00:00",
+    "sample_end": "2026-09-21T09:50:15.296000+00:00",
+    "metrics": {
+      "vus": {
+        "samples": 12,
+        "mean": 200.0,
+        "max": 200.0
+      },
+      "requests_per_second": {
+        "samples": 12,
+        "mean": 333.06216699456166,
+        "max": 342.3947631602873
+      },
+      "server_errors_per_second": {
+        "samples": 12,
+        "mean": 2.0713597909580765,
+        "max": 2.818386791766674
+      },
+      "http_p95_seconds_1m": {
+        "samples": 12,
+        "mean": 1.9252582444564525,
+        "max": 1.9842395666131618
+      },
+      "http_p99_seconds_1m": {
+        "samples": 12,
+        "mean": 2.397606140217975,
+        "max": 2.4112941412520064
+      },
+      "in_flight": {
+        "samples": 12,
+        "mean": 189.08333333333334,
+        "max": 196.0
+      },
+      "vm_cpu_percent": {
+        "samples": 12,
+        "mean": 14.270682147801926,
+        "max": 14.686562414764914
+      },
+      "vm_memory_used_bytes": {
+        "samples": 12,
+        "mean": 3424648192.0,
+        "max": 3461070848.0
+      },
+      "vm_memory_percent": {
+        "samples": 12,
+        "mean": 20.600239733705866,
+        "max": 20.81933244141554
+      },
+      "app_rss_bytes": {
+        "samples": 12,
+        "mean": 111319040.0,
+        "max": 111996928.0
+      },
+      "app_cpu_cores": {
+        "samples": 12,
+        "mean": 1.0430304037153775,
+        "max": 1.0435304385773507
+      },
+      "db_average_seconds": {
+        "samples": 12,
+        "mean": 0.46536133300333765,
+        "max": 0.4820578462245538
+      },
+      "faults_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "booking_conflicts_per_second": {
+        "samples": 12,
+        "mean": 12.46606051179836,
+        "max": 12.873897627057007
+      },
+      "logs_dropped_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "log_sink_errors_per_second": {
+        "samples": 12,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    }
+  }
+]

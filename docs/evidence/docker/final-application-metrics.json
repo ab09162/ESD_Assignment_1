@@ -1,0 +1,112 @@
+{
+  "verified_utc": "2026-09-21T15:58:07.512173+00:00",
+  "queries": {
+    "active_bookings": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "active_bookings",
+              "instance": "app:8000",
+              "job": "campus-app",
+              "service": "campus-booking"
+            },
+            "value": [
+              1790006287.661,
+              "52"
+            ]
+          }
+        ]
+      }
+    },
+    "booking_metrics_refresh_success": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "booking_metrics_refresh_success",
+              "instance": "app:8000",
+              "job": "campus-app",
+              "service": "campus-booking"
+            },
+            "value": [
+              1790006287.667,
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    "fault_injections_total": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "fault_injections_total",
+              "instance": "app:8000",
+              "job": "campus-app",
+              "service": "campus-booking"
+            },
+            "value": [
+              1790006287.672,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "logging_dropped_total": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "logging_dropped_total",
+              "instance": "app:8000",
+              "job": "campus-app",
+              "service": "campus-booking"
+            },
+            "value": [
+              1790006287.677,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "logging_sink_errors_total": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "logging_sink_errors_total",
+              "instance": "app:8000",
+              "job": "campus-app",
+              "service": "campus-booking"
+            },
+            "value": [
+              1790006287.682,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "node_scrape_collector_success == 0": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": []
+      }
+    }
+  }
+}

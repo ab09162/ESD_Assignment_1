@@ -1,0 +1,559 @@
+{
+  "collected_utc": "2026-09-21T15:49:29.196829+00:00",
+  "load": {
+    "start": "2026-09-21T09:37:45.2962723Z",
+    "end": "2026-09-21T09:50:47.4615938Z",
+    "http_status_counts": {
+      "took": 24,
+      "timed_out": false,
+      "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 223460,
+          "relation": "eq"
+        },
+        "max_score": 0.0,
+        "hits": [
+          {
+            "_index": "campus-logs-000001",
+            "_id": "-tlUw6ABWC29OxUMN1Oe",
+            "_score": 0.0,
+            "_source": {
+              "@timestamp": "2026-09-21T09:37:46.289Z",
+              "operation": "http_request",
+              "service": "campus-booking",
+              "log": {
+                "offset": 5398182,
+                "file": {
+                  "path": "/var/log/campus/app.jsonl",
+                  "device_id": "2096",
+                  "inode": "55094"
+                }
+              },
+              "message": "request_completed",
+              "request_id": "f32bbac9-56c2-456f-9881-7b754af4af6f",
+              "agent": {
+                "version": "8.19.0",
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "c8800ac23c1f",
+                "type": "filebeat"
+              },
+              "status_code": 200,
+              "severity": "INFO",
+              "timestamp": "2026-09-21T09:37:46.289307+00:00",
+              "method": "GET",
+              "route": "/rooms",
+              "duration_ms": 2.836
+            }
+          },
+          {
+            "_index": "campus-logs-000001",
+            "_id": "-9lUw6ABWC29OxUMN1Oe",
+            "_score": 0.0,
+            "_source": {
+              "@timestamp": "2026-09-21T09:37:46.298Z",
+              "method": "GET",
+              "duration_ms": 8.804,
+              "severity": "INFO",
+              "status_code": 200,
+              "agent": {
+                "type": "filebeat",
+                "version": "8.19.0",
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "c8800ac23c1f"
+              },
+              "message": "request_completed",
+              "request_id": "8849327d-8df3-41d6-84c1-11412b6ba7af",
+              "operation": "http_request",
+              "service": "campus-booking",
+              "log": {
+                "offset": 5398455,
+                "file": {
+                  "device_id": "2096",
+                  "inode": "55094",
+                  "path": "/var/log/campus/app.jsonl"
+                }
+              },
+              "route": "/rooms/{room_id}/availability",
+              "timestamp": "2026-09-21T09:37:46.298933+00:00"
+            }
+          },
+          {
+            "_index": "campus-logs-000001",
+            "_id": "_NlUw6ABWC29OxUMN1Oe",
+            "_score": 0.0,
+            "_source": {
+              "@timestamp": "2026-09-21T09:37:46.307Z",
+              "message": "request_completed",
+              "method": "POST",
+              "agent": {
+                "version": "8.19.0",
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "c8800ac23c1f",
+                "type": "filebeat"
+              },
+              "operation": "http_request",
+              "request_id": "095b3d98-892e-4e68-9ec8-727b29e3b0c9",
+              "route": "/bookings",
+              "duration_ms": 7.211,
+              "severity": "INFO",
+              "timestamp": "2026-09-21T09:37:46.307313+00:00",
+              "log": {
+                "offset": 5398751,
+                "file": {
+                  "path": "/var/log/campus/app.jsonl",
+                  "device_id": "2096",
+                  "inode": "55094"
+                }
+              },
+              "service": "campus-booking",
+              "status_code": 201
+            }
+          }
+        ]
+      },
+      "aggregations": {
+        "counts": {
+          "doc_count_error_upper_bound": 0,
+          "sum_other_doc_count": 0,
+          "buckets": [
+            {
+              "key": 200,
+              "doc_count": 172629
+            },
+            {
+              "key": 201,
+              "doc_count": 42137
+            },
+            {
+              "key": 409,
+              "doc_count": 8422
+            },
+            {
+              "key": 503,
+              "doc_count": 272
+            }
+          ]
+        }
+      }
+    },
+    "database_error_types": {
+      "took": 2,
+      "timed_out": false,
+      "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 272,
+          "relation": "eq"
+        },
+        "max_score": 0.0,
+        "hits": [
+          {
+            "_index": "campus-logs-000001",
+            "_id": "QNtdw6ABWC29OxUMpOtm",
+            "_score": 0.0,
+            "_source": {
+              "@timestamp": "2026-09-21T09:48:08.786Z",
+              "operation": "database",
+              "timestamp": "2026-09-21T09:48:08.786150+00:00",
+              "log": {
+                "offset": 1560091,
+                "file": {
+                  "path": "/var/log/campus/app.jsonl",
+                  "device_id": "2096",
+                  "inode": "55269"
+                }
+              },
+              "service": "campus-booking",
+              "severity": "ERROR",
+              "message": "database_unavailable",
+              "request_id": "4c978874-36fd-41af-9919-e991e5b5c330",
+              "error_type": "TimeoutError",
+              "agent": {
+                "name": "c8800ac23c1f",
+                "type": "filebeat",
+                "version": "8.19.0",
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9"
+              }
+            }
+          },
+          {
+            "_index": "campus-logs-000001",
+            "_id": "Kdtdw6ABWC29OxUMrO5n",
+            "_score": 0.0,
+            "_source": {
+              "@timestamp": "2026-09-21T09:48:10.886Z",
+              "severity": "ERROR",
+              "log": {
+                "offset": 1773504,
+                "file": {
+                  "path": "/var/log/campus/app.jsonl",
+                  "device_id": "2096",
+                  "inode": "55269"
+                }
+              },
+              "request_id": "b0584a70-a047-4388-a1a4-fd845cf18254",
+              "operation": "database",
+              "error_type": "TimeoutError",
+              "message": "database_unavailable",
+              "agent": {
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "c8800ac23c1f",
+                "type": "filebeat",
+                "version": "8.19.0"
+              },
+              "timestamp": "2026-09-21T09:48:10.886827+00:00",
+              "service": "campus-booking"
+            }
+          },
+          {
+            "_index": "campus-logs-000001",
+            "_id": "CNtdw6ABWC29OxUMtO8m",
+            "_score": 0.0,
+            "_source": {
+              "@timestamp": "2026-09-21T09:48:11.469Z",
+              "log": {
+                "offset": 1837239,
+                "file": {
+                  "device_id": "2096",
+                  "inode": "55269",
+                  "path": "/var/log/campus/app.jsonl"
+                }
+              },
+              "operation": "database",
+              "service": "campus-booking",
+              "agent": {
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "c8800ac23c1f",
+                "type": "filebeat",
+                "version": "8.19.0"
+              },
+              "message": "database_unavailable",
+              "request_id": "5e20e4b4-98d6-400a-8a69-3c57ce888cdb",
+              "error_type": "TimeoutError",
+              "timestamp": "2026-09-21T09:48:11.469041+00:00",
+              "severity": "ERROR"
+            }
+          }
+        ]
+      },
+      "aggregations": {
+        "counts": {
+          "doc_count_error_upper_bound": 0,
+          "sum_other_doc_count": 0,
+          "buckets": [
+            {
+              "key": "TimeoutError",
+              "doc_count": 272
+            }
+          ]
+        }
+      }
+    },
+    "error_routes": {
+      "took": 3,
+      "timed_out": false,
+      "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 272,
+          "relation": "eq"
+        },
+        "max_score": null,
+        "hits": []
+      },
+      "aggregations": {
+        "routes": {
+          "doc_count_error_upper_bound": 0,
+          "sum_other_doc_count": 0,
+          "buckets": [
+            {
+              "key": "/bookings/{booking_id}",
+              "doc_count": 110
+            },
+            {
+              "key": "/rooms/{room_id}/availability",
+              "doc_count": 65
+            },
+            {
+              "key": "/bookings",
+              "doc_count": 53
+            },
+            {
+              "key": "/rooms",
+              "doc_count": 43
+            },
+            {
+              "key": "/ready",
+              "doc_count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "anomaly_run": "20260921T153226Z",
+  "phases": [
+    {
+      "phase": "baseline",
+      "start": "2026-09-21T15:32:31.7254633Z",
+      "end": "2026-09-21T15:34:34.2240418Z",
+      "exit_code": 0,
+      "fault_logs": {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 0,
+            "relation": "eq"
+          },
+          "max_score": null,
+          "hits": []
+        }
+      },
+      "server_error_logs": {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 0,
+            "relation": "eq"
+          },
+          "max_score": null,
+          "hits": []
+        }
+      }
+    },
+    {
+      "phase": "fault",
+      "start": "2026-09-21T15:39:48.3013711Z",
+      "end": "2026-09-21T15:41:52.9158802Z",
+      "exit_code": 0,
+      "fault_logs": {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 1590,
+            "relation": "eq"
+          },
+          "max_score": 0.0,
+          "hits": [
+            {
+              "_index": "campus-logs-000001",
+              "_id": "Kd2hxKABWC29OxUMYi35",
+              "_score": 0.0,
+              "_source": {
+                "@timestamp": "2026-09-21T15:41:44.816Z",
+                "method": "GET",
+                "request_id": "e6b72c73-7092-4008-9ad4-f019f6500802",
+                "delay_ms": 500,
+                "severity": "WARNING",
+                "agent": {
+                  "version": "8.19.0",
+                  "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                  "name": "c8800ac23c1f",
+                  "type": "filebeat"
+                },
+                "log": {
+                  "offset": 4137470,
+                  "file": {
+                    "path": "/var/log/campus/app.jsonl",
+                    "device_id": "2096",
+                    "inode": "61088"
+                  }
+                },
+                "service": "campus-booking",
+                "message": "fault_delay_injected",
+                "operation": "fault_delay",
+                "route": "/bookings/{booking_id}",
+                "timestamp": "2026-09-21T15:41:44.816287+00:00"
+              }
+            }
+          ]
+        }
+      },
+      "server_error_logs": {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 0,
+            "relation": "eq"
+          },
+          "max_score": null,
+          "hits": []
+        }
+      },
+      "correlation": {
+        "took": 2,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 2,
+            "relation": "eq"
+          },
+          "max_score": null,
+          "hits": [
+            {
+              "_index": "campus-logs-000001",
+              "_id": "Kd2hxKABWC29OxUMYi35",
+              "_score": null,
+              "_source": {
+                "@timestamp": "2026-09-21T15:41:44.816Z",
+                "method": "GET",
+                "request_id": "e6b72c73-7092-4008-9ad4-f019f6500802",
+                "delay_ms": 500,
+                "severity": "WARNING",
+                "agent": {
+                  "version": "8.19.0",
+                  "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                  "name": "c8800ac23c1f",
+                  "type": "filebeat"
+                },
+                "log": {
+                  "offset": 4137470,
+                  "file": {
+                    "path": "/var/log/campus/app.jsonl",
+                    "device_id": "2096",
+                    "inode": "61088"
+                  }
+                },
+                "service": "campus-booking",
+                "message": "fault_delay_injected",
+                "operation": "fault_delay",
+                "route": "/bookings/{booking_id}",
+                "timestamp": "2026-09-21T15:41:44.816287+00:00"
+              },
+              "sort": [
+                1790005304816
+              ]
+            },
+            {
+              "_index": "campus-logs-000001",
+              "_id": "Vd2hxKABWC29OxUMZi32",
+              "_score": null,
+              "_source": {
+                "@timestamp": "2026-09-21T15:41:45.325Z",
+                "route": "/bookings/{booking_id}",
+                "timestamp": "2026-09-21T15:41:45.325138+00:00",
+                "agent": {
+                  "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                  "name": "c8800ac23c1f",
+                  "type": "filebeat",
+                  "version": "8.19.0"
+                },
+                "severity": "INFO",
+                "duration_ms": 508.86,
+                "method": "GET",
+                "status_code": 200,
+                "message": "request_completed",
+                "log": {
+                  "offset": 4149837,
+                  "file": {
+                    "path": "/var/log/campus/app.jsonl",
+                    "device_id": "2096",
+                    "inode": "61088"
+                  }
+                },
+                "operation": "http_request",
+                "service": "campus-booking",
+                "request_id": "e6b72c73-7092-4008-9ad4-f019f6500802"
+              },
+              "sort": [
+                1790005305325
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "phase": "recovery",
+      "start": "2026-09-21T15:47:07.3015089Z",
+      "end": "2026-09-21T15:49:10.5571932Z",
+      "exit_code": 0,
+      "fault_logs": {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 0,
+            "relation": "eq"
+          },
+          "max_score": null,
+          "hits": []
+        }
+      },
+      "server_error_logs": {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 1,
+          "successful": 1,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 0,
+            "relation": "eq"
+          },
+          "max_score": null,
+          "hits": []
+        }
+      }
+    }
+  ]
+}

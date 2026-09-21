@@ -1,0 +1,275 @@
+name: campus-observability
+
+x-app-environment: &app-environment
+  POSTGRES_HOST: postgres
+  POSTGRES_DB: ${POSTGRES_DB:-campus}
+  POSTGRES_USER: ${POSTGRES_USER:-campus}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-coursework-change-me}
+  DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+  DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+  DB_POOL_TIMEOUT: ${DB_POOL_TIMEOUT:-2}
+  REQUEST_TIMEOUT_SECONDS: ${REQUEST_TIMEOUT_SECONDS:-10}
+  LOG_FILE: /var/log/campus/app.jsonl
+  ENVIRONMENT: local
+  FAULT_DELAY_ENABLED: ${FAULT_DELAY_ENABLED:-false}
+  FAULT_DELAY_MS: ${FAULT_DELAY_MS:-500}
+  FAULT_EVERY_N_REQUESTS: ${FAULT_EVERY_N_REQUESTS:-5}
+
+x-logging: &container-logging
+  driver: json-file
+  options:
+    max-size: 10m
+    max-file: "3"
+
+services:
+  log-init:
+    build: {context: ., target: base}
+    user: root
+    command: [python, -c, "import os; os.chown('/var/log/campus', 10001, 10001); os.chmod('/var/log/campus', 0o750)"]
+    volumes: [app_logs:/var/log/campus]
+    mem_limit: 64m
+    logging: *container-logging
+
+  postgres:
+    image: postgres:16.9-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-campus}
+      POSTGRES_USER: ${POSTGRES_USER:-campus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-coursework-change-me}
+    command: [postgres, -c, max_connections=60, -c, shared_buffers=128MB]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+    mem_limit: 512m
+    logging: *container-logging
+
+  app:
+    build:
+      context: .
+      target: base
+    environment: *app-environment
+    ports: ["127.0.0.1:${APP_PORT:-8000}:8000"]
+    volumes: [app_logs:/var/log/campus]
+    depends_on:
+      postgres: {condition: service_healthy}
+      log-init: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/ready', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+      start_period: 15s
+    restart: unless-stopped
+    mem_limit: 384m
+    logging: *container-logging
+
+  prometheus:
+    image: prom/prometheus:v3.4.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+      - --storage.tsdb.retention.size=1GB
+      - --web.enable-remote-write-receiver
+    ports: ["127.0.0.1:9090:9090"]
+    volumes:
+      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://localhost:9090/-/ready"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+    mem_limit: 512m
+    logging: *container-logging
+
+  grafana:
+    image: grafana/grafana:12.0.1
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-local-coursework-change-me}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+    ports: ["127.0.0.1:3000:3000"]
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./observability/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ./observability/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+    mem_limit: 384m
+    logging: *container-logging
+
+  node-exporter:
+    image: prom/node-exporter:v1.9.1
+    pid: host
+    command:
+      # Docker Desktop lacks several bare-metal collectors (DMI, RAID, tape, etc.).
+      # Enable the required VM resource collectors explicitly, avoiding false failures.
+      - --collector.disable-defaults
+      - --collector.cpu
+      - --collector.meminfo
+      - --collector.filesystem
+      - --collector.diskstats
+      - --collector.netdev
+      - --collector.uname
+      - --collector.loadavg
+      - --collector.stat
+      - --collector.time
+      - --collector.vmstat
+      - --path.rootfs=/host
+      - --path.procfs=/host/proc
+      - --path.sysfs=/host/sys
+      - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/containers/.+)($$|/)
+    volumes: ["/:/host:ro"]
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://localhost:9100/metrics"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    mem_limit: 128m
+    logging: *container-logging
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.19.0
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"
+      xpack.security.enrollment.enabled: "false"
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      cluster.name: campus-local
+    ports: ["127.0.0.1:9200:9200"]
+    volumes: [elasticsearch_data:/usr/share/elasticsearch/data]
+    healthcheck:
+      test: [CMD-SHELL, "curl -fsS 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=3s' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+    mem_limit: 1536m
+    logging: *container-logging
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.19.0
+    environment:
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
+      TELEMETRY_ENABLED: "false"
+      NODE_OPTIONS: --max-old-space-size=512
+      XPACK_SECURITY_ENABLED: "false"
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: ${KIBANA_ENCRYPTION_KEY:-local-coursework-encryption-key-change-me}
+    ports: ["127.0.0.1:5601:5601"]
+    depends_on:
+      elasticsearch: {condition: service_healthy}
+    healthcheck:
+      test: [CMD-SHELL, "curl -fsS http://localhost:5601/api/status > /dev/null || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 30
+      start_period: 45s
+    restart: unless-stopped
+    mem_limit: 1024m
+    logging: *container-logging
+
+  elastic-setup:
+    build: {context: ., target: base}
+    command: [python, scripts/setup-elasticsearch.py]
+    depends_on:
+      elasticsearch: {condition: service_healthy}
+    mem_limit: 128m
+    logging: *container-logging
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.19.0
+    user: root
+    command: [filebeat, -e, --strict.perms=false]
+    volumes:
+      - ./observability/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - app_logs:/var/log/campus:ro
+      - filebeat_data:/usr/share/filebeat/data
+    depends_on:
+      elasticsearch: {condition: service_healthy}
+      elastic-setup: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, filebeat, test, output, --strict.perms=false]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    mem_limit: 256m
+    logging: *container-logging
+
+  postgres-test:
+    profiles: [test]
+    image: postgres:16.9-bookworm
+    environment:
+      POSTGRES_DB: campus_test
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: local-test-only
+    tmpfs: [/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U test -d campus_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    mem_limit: 256m
+    logging: *container-logging
+
+  tests:
+    profiles: [test]
+    build: {context: ., target: test}
+    environment:
+      TEST_DATABASE_URL: postgresql+asyncpg://test:local-test-only@postgres-test:5432/campus_test
+      LOG_FILE: /tmp/test-app.jsonl
+    depends_on:
+      postgres-test: {condition: service_healthy}
+    mem_limit: 384m
+    logging: *container-logging
+
+  k6:
+    profiles: [load]
+    image: grafana/k6:1.0.0
+    environment:
+      BASE_URL: http://app:8000
+      K6_PROMETHEUS_RW_SERVER_URL: http://prometheus:9090/api/v1/write
+      K6_PROMETHEUS_RW_TREND_STATS: p(95),p(99),avg
+      K6_PROMETHEUS_RW_STALE_MARKERS: "true"
+    volumes:
+      - ./load-tests:/scripts:ro
+      - ./results:/results
+    mem_limit: 512m
+    logging: *container-logging
+
+  cardinality-demo:
+    profiles: [cardinality]
+    build: {context: ., target: base}
+    command: [uvicorn, experiments.cardinality:app, --host, 0.0.0.0, --port, "8010", --no-access-log]
+    environment:
+      DEMO_HIGH_CARDINALITY: ${DEMO_HIGH_CARDINALITY:-true}
+    ports: ["127.0.0.1:8010:8010"]
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8010/health', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    mem_limit: 128m
+    logging: *container-logging
+
+volumes:
+  postgres_data:
+  app_logs:
+  prometheus_data:
+  grafana_data:
+  elasticsearch_data:
+  filebeat_data:

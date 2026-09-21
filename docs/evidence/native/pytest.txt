@@ -1,0 +1,8 @@
+Real PostgreSQL 16.9 test run, Windows Python 3.13, 2026-09-21.
+Command: python -m pytest -q -p no:cacheprovider --tb=short
+TEST_DATABASE_URL pointed to the isolated local campus_test database.
+
+..........................                                               [100%]
+26 passed in 8.32s
+
+This is the recorded test result, not a Docker/Python 3.12 container run.

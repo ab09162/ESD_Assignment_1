@@ -1,0 +1,40 @@
+[
+  {
+    "high": true,
+    "utc": "2026-09-21T04:37:08.939251+00:00",
+    "query_response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789965428.937,
+              "100"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "high": false,
+    "utc": "2026-09-21T04:37:13.270558+00:00",
+    "query_response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1789965433.268,
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

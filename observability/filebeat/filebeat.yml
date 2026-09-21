@@ -1,0 +1,40 @@
+filebeat.inputs:
+  - type: filestream
+    id: campus-json-log
+    enabled: true
+    paths: [/var/log/campus/app.jsonl, /var/log/campus/app.jsonl.*]
+    parsers:
+      - ndjson:
+          target: ""
+          add_error_key: true
+          overwrite_keys: true
+    prospector.scanner.check_interval: 2s
+
+processors:
+  - timestamp:
+      field: timestamp
+      layouts: ['2006-01-02T15:04:05.999999Z07:00']
+      test: ['2026-01-01T12:00:00.123456+00:00']
+  - drop_fields:
+      fields: [agent.ephemeral_id, host, ecs, input]
+      ignore_missing: true
+
+# The elastic-setup service installs our explicit mapping, policy and write alias.
+# Avoid Filebeat's ECS service object conflicting with our scalar service field.
+setup.ilm.enabled: false
+setup.template.enabled: false
+
+queue.mem:
+  events: 2048
+  flush.min_events: 128
+  flush.timeout: 1s
+
+output.elasticsearch:
+  hosts: [http://elasticsearch:9200]
+  index: campus-logs
+  bulk_max_size: 256
+  backoff.init: 1s
+  backoff.max: 30s
+
+logging.level: warning
+logging.metrics.enabled: false

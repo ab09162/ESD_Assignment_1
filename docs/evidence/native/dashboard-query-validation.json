@@ -1,0 +1,232 @@
+[
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Requests per second",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Successful requests per second",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Server errors per second (5xx)",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Server error percentage",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "p95 request latency",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "p99 request latency",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Average HTTP latency",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "In-flight requests",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Requests by route",
+    "result_series": 4
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Requests by status",
+    "result_series": 3
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Booking creation rate",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Booking cancellation rate",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Booking conflict rate",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Active bookings",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "DB operation average latency",
+    "result_series": 9
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Booking conflict percentage (own exploration)",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Route p95 latency",
+    "result_series": 4
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Mean booking lead time",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Business gauge refresh health",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Business gauge refresh health",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Log pipeline local loss",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-app.json",
+    "panel": "Log pipeline local loss",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "k6 virtual users",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Server throughput",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Server p95 / p99",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Server p95 / p99",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Client p95 / p99",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Client p95 / p99",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Server error percentage",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "k6 unexpected response fraction",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "In-flight requests",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "VM CPU usage",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "VM memory usage",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "DB average latency",
+    "result_series": 9
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "App resident memory",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "App CPU cores used",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "VM network receive / transmit",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "VM network receive / transmit",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-load.json",
+    "panel": "Injected delays per second",
+    "result_series": 1
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "VM CPU usage",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "VM memory usage",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "Disk usage",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "Disk I/O",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "Disk I/O",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "Network receive",
+    "result_series": 0
+  },
+  {
+    "dashboard": "campus-node.json",
+    "panel": "Network transmit",
+    "result_series": 0
+  }
+]

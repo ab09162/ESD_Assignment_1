@@ -1,0 +1,945 @@
+{
+  "verified_utc": "2026-09-21T15:54:32.393041+00:00",
+  "query_time": "2026-09-21T15:40:45Z",
+  "target_status": {
+    "campus-app": "up",
+    "cardinality-demo": "up",
+    "node-exporter": "up",
+    "prometheus": "up"
+  },
+  "datasource_health": {
+    "details": {
+      "application": "Prometheus",
+      "features": {
+        "rulerApiEnabled": false
+      }
+    },
+    "message": "Successfully queried the Prometheus API.",
+    "status": "OK"
+  },
+  "dashboard_count": 3,
+  "panel_count": 40,
+  "query_count": 46,
+  "required_metric_series": {
+    "http_requests_total": 5,
+    "http_requests_in_progress": 3,
+    "http_request_duration_seconds_bucket": 60,
+    "db_operation_duration_seconds_sum": 5,
+    "db_operation_duration_seconds_count": 5,
+    "bookings_created_total": 1,
+    "bookings_cancelled_total": 1,
+    "booking_conflicts_total": 1,
+    "active_bookings": 1,
+    "node_cpu_seconds_total": 128,
+    "node_memory_MemAvailable_bytes": 1,
+    "node_filesystem_size_bytes": 45,
+    "node_disk_read_bytes_total": 5,
+    "node_network_receive_bytes_total": 2
+  },
+  "queries": [
+    {
+      "dashboard": "campus-app",
+      "panel": "Requests per second",
+      "expression": "sum(rate(http_requests_total{job=\"campus-app\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "61.0125090314466"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Successful requests per second",
+      "expression": "sum(rate(http_requests_total{job=\"campus-app\",status=~\"2..\"}[1m])) or vector(0)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "58.71371715225868"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Server errors per second (5xx)",
+      "expression": "sum(rate(http_requests_total{job=\"campus-app\",status=~\"5..\"}[1m])) or vector(0)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Server error percentage",
+      "expression": "100 * (sum(rate(http_requests_total{job=\"campus-app\",status=~\"5..\"}[1m])) or vector(0)) / clamp_min(sum(rate(http_requests_total{job=\"campus-app\"}[1m])), 0.000001)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "p95 request latency",
+      "expression": "histogram_quantile(0.95, sum by (le) (rate(http_request_duration_seconds_bucket{job=\"campus-app\"}[5m])))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0.8740126873306197"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "p99 request latency",
+      "expression": "histogram_quantile(0.99, sum by (le) (rate(http_request_duration_seconds_bucket{job=\"campus-app\"}[5m])))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0.9748025374661238"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Average HTTP latency",
+      "expression": "sum(rate(http_request_duration_seconds_sum{job=\"campus-app\"}[5m])) / clamp_min(sum(rate(http_request_duration_seconds_count{job=\"campus-app\"}[5m])), 0.000001)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0.11099495363670159"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "In-flight requests",
+      "expression": "sum(http_requests_in_progress{job=\"campus-app\"})",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "9"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Requests by route",
+      "expression": "sum by (route) (rate(http_requests_total{job=\"campus-app\"}[1m]))",
+      "series_count": 4,
+      "sample": [
+        {
+          "metric": {
+            "route": "/rooms"
+          },
+          "value": [
+            1790005245,
+            "11.59876887688769"
+          ]
+        },
+        {
+          "metric": {
+            "route": "/bookings"
+          },
+          "value": [
+            1790005245,
+            "14.899163696913146"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Requests by status",
+      "expression": "sum by (status) (rate(http_requests_total{job=\"campus-app\"}[1m]))",
+      "series_count": 3,
+      "sample": [
+        {
+          "metric": {
+            "status": "200"
+          },
+          "value": [
+            1790005245,
+            "47.19828160870433"
+          ]
+        },
+        {
+          "metric": {
+            "status": "201"
+          },
+          "value": [
+            1790005245,
+            "11.515435543554355"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Booking creation rate",
+      "expression": "sum(rate(bookings_created_total{job=\"campus-app\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "11.436289359638755"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Booking cancellation rate",
+      "expression": "sum(rate(bookings_cancelled_total{job=\"campus-app\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "11.400041215868109"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Booking conflict rate",
+      "expression": "sum(rate(booking_conflicts_total{job=\"campus-app\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "2.2836330575506865"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Active bookings",
+      "expression": "active_bookings{job=\"campus-app\"}",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "active_bookings",
+            "instance": "app:8000",
+            "job": "campus-app",
+            "service": "campus-booking"
+          },
+          "value": [
+            1790005245,
+            "55"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "DB operation average latency",
+      "expression": "sum by (operation) (rate(db_operation_duration_seconds_sum{job=\"campus-app\"}[5m])) / clamp_min(sum by (operation) (rate(db_operation_duration_seconds_count{job=\"campus-app\"}[5m])), 0.000001)",
+      "series_count": 9,
+      "sample": [
+        {
+          "metric": {
+            "operation": "active_count"
+          },
+          "value": [
+            1790005245,
+            "0.006746943593328578"
+          ]
+        },
+        {
+          "metric": {
+            "operation": "readiness"
+          },
+          "value": [
+            1790005245,
+            "0.0036938944545082363"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Booking conflict percentage (own exploration)",
+      "expression": "100 * sum(rate(booking_conflicts_total[5m])) / clamp_min(sum(rate(booking_conflicts_total[5m])) + sum(rate(bookings_created_total[5m])), 0.000001)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "16.6446499339498"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Route p95 latency",
+      "expression": "histogram_quantile(0.95, sum by (le, route) (rate(http_request_duration_seconds_bucket[5m])))",
+      "series_count": 4,
+      "sample": [
+        {
+          "metric": {
+            "route": "/bookings/{booking_id}"
+          },
+          "value": [
+            1790005245,
+            "0.8844556517182087"
+          ]
+        },
+        {
+          "metric": {
+            "route": "/rooms/{room_id}/availability"
+          },
+          "value": [
+            1790005245,
+            "0.8649498375563076"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Mean booking lead time",
+      "expression": "sum(rate(booking_lead_time_seconds_sum[5m])) / clamp_min(sum(rate(booking_lead_time_seconds_count[5m])), 0.000001)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "105275.58820947856"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Business gauge refresh health",
+      "expression": "booking_metrics_refresh_success",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "booking_metrics_refresh_success",
+            "instance": "app:8000",
+            "job": "campus-app",
+            "service": "campus-booking"
+          },
+          "value": [
+            1790005245,
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Business gauge refresh health",
+      "expression": "time() - booking_metrics_last_refresh_timestamp_seconds",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "instance": "app:8000",
+            "job": "campus-app",
+            "service": "campus-booking"
+          },
+          "value": [
+            1790005245,
+            "6.296702861785889"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Log pipeline local loss",
+      "expression": "sum(rate(logging_dropped_total[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-app",
+      "panel": "Log pipeline local loss",
+      "expression": "sum(rate(logging_sink_errors_total[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "k6 virtual users",
+      "expression": "k6_vus",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "k6_vus",
+            "phase": "fault",
+            "profile": "baseline"
+          },
+          "value": [
+            1790005245,
+            "10"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Server throughput",
+      "expression": "sum(rate(http_requests_total{job=\"campus-app\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "61.0125090314466"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Server p95 / p99",
+      "expression": "histogram_quantile(0.95, sum by (le) (rate(http_request_duration_seconds_bucket{job=\"campus-app\"}[5m])))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0.8740126873306197"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Server p95 / p99",
+      "expression": "histogram_quantile(0.99, sum by (le) (rate(http_request_duration_seconds_bucket{job=\"campus-app\"}[5m])))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0.9748025374661238"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Client p95 / p99",
+      "expression": "k6_http_req_duration_p95",
+      "series_count": 8,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "k6_http_req_duration_p95",
+            "expected_response": "true",
+            "method": "GET",
+            "name": "/bookings/{booking_id}",
+            "phase": "fault",
+            "profile": "baseline",
+            "scenario": "default",
+            "status": "200"
+          },
+          "value": [
+            1790005245,
+            "0.5137889415"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "k6_http_req_duration_p95",
+            "expected_response": "true",
+            "method": "GET",
+            "name": "/rooms",
+            "phase": "fault",
+            "profile": "baseline",
+            "scenario": "default",
+            "status": "200"
+          },
+          "value": [
+            1790005245,
+            "0.5131545956"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Client p95 / p99",
+      "expression": "k6_http_req_duration_p99",
+      "series_count": 8,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "k6_http_req_duration_p99",
+            "expected_response": "true",
+            "method": "GET",
+            "name": "/bookings/{booking_id}",
+            "phase": "fault",
+            "profile": "baseline",
+            "scenario": "default",
+            "status": "200"
+          },
+          "value": [
+            1790005245,
+            "0.5207865122499999"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "k6_http_req_duration_p99",
+            "expected_response": "true",
+            "method": "GET",
+            "name": "/rooms",
+            "phase": "fault",
+            "profile": "baseline",
+            "scenario": "default",
+            "status": "200"
+          },
+          "value": [
+            1790005245,
+            "0.5202157718599999"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Server error percentage",
+      "expression": "100 * (sum(rate(http_requests_total{job=\"campus-app\",status=~\"5..\"}[1m])) or vector(0)) / clamp_min(sum(rate(http_requests_total{job=\"campus-app\"}[1m])), 0.000001)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "k6 unexpected response fraction",
+      "expression": "k6_unexpected_responses_rate",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "k6_unexpected_responses_rate",
+            "phase": "fault",
+            "profile": "baseline",
+            "scenario": "default"
+          },
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "In-flight requests",
+      "expression": "sum(http_requests_in_progress{job=\"campus-app\"})",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "9"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "VM CPU usage",
+      "expression": "100 * (1 - avg by (machine) (rate(node_cpu_seconds_total{mode=\"idle\"}[1m])))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "6.936438520566501"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "VM memory usage",
+      "expression": "100 * (1 - node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "19.48431382694331"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "DB average latency",
+      "expression": "sum by (operation) (rate(db_operation_duration_seconds_sum{job=\"campus-app\"}[5m])) / clamp_min(sum by (operation) (rate(db_operation_duration_seconds_count{job=\"campus-app\"}[5m])), 0.000001)",
+      "series_count": 9,
+      "sample": [
+        {
+          "metric": {
+            "operation": "active_count"
+          },
+          "value": [
+            1790005245,
+            "0.006746943593328578"
+          ]
+        },
+        {
+          "metric": {
+            "operation": "readiness"
+          },
+          "value": [
+            1790005245,
+            "0.0036938944545082363"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "App resident memory",
+      "expression": "process_resident_memory_bytes{job=\"campus-app\"}",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "__name__": "process_resident_memory_bytes",
+            "instance": "app:8000",
+            "job": "campus-app",
+            "service": "campus-booking"
+          },
+          "value": [
+            1790005245,
+            "75571200"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "App CPU cores used",
+      "expression": "rate(process_cpu_seconds_total{job=\"campus-app\"}[1m])",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "instance": "app:8000",
+            "job": "campus-app",
+            "service": "campus-booking"
+          },
+          "value": [
+            1790005245,
+            "0.34912264751341027"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "VM network receive / transmit",
+      "expression": "sum(rate(node_network_receive_bytes_total{device!=\"lo\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "130.97792486453068"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "VM network receive / transmit",
+      "expression": "sum(rate(node_network_transmit_bytes_total{device!=\"lo\"}[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "2021.202312979598"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-load",
+      "panel": "Injected delays per second",
+      "expression": "sum(rate(fault_injections_total[1m]))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {},
+          "value": [
+            1790005245,
+            "12.161252235051672"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "VM CPU usage",
+      "expression": "100 * (1 - avg by (machine) (rate(node_cpu_seconds_total{mode=\"idle\"}[1m])))",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "6.936438520566501"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "VM memory usage",
+      "expression": "100 * (1 - node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "19.48431382694331"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "Disk usage",
+      "expression": "100 * (1 - node_filesystem_avail_bytes{fstype!~\"tmpfs|overlay|squashfs\"} / node_filesystem_size_bytes{fstype!~\"tmpfs|overlay|squashfs\"})",
+      "series_count": 19,
+      "sample": [
+        {
+          "metric": {
+            "device": "/dev/sdd",
+            "fstype": "ext4",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm",
+            "mountpoint": "/mnt/docker-desktop-disk"
+          },
+          "value": [
+            1790005245,
+            "5.911347509145393"
+          ]
+        },
+        {
+          "metric": {
+            "device": "/dev/sdd",
+            "fstype": "ext4",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm",
+            "mountpoint": "/parent-distro/mnt/docker-desktop-disk"
+          },
+          "value": [
+            1790005245,
+            "5.911347509145393"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "Disk I/O",
+      "expression": "rate(node_disk_read_bytes_total[1m])",
+      "series_count": 5,
+      "sample": [
+        {
+          "metric": {
+            "device": "sda",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "device": "sdb",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "Disk I/O",
+      "expression": "rate(node_disk_written_bytes_total[1m])",
+      "series_count": 5,
+      "sample": [
+        {
+          "metric": {
+            "device": "sda",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "device": "sdb",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "Network receive",
+      "expression": "rate(node_network_receive_bytes_total{device!=\"lo\"}[1m])",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "device": "eth0",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "130.97792486453068"
+          ]
+        }
+      ]
+    },
+    {
+      "dashboard": "campus-node",
+      "panel": "Network transmit",
+      "expression": "rate(node_network_transmit_bytes_total{device!=\"lo\"}[1m])",
+      "series_count": 1,
+      "sample": [
+        {
+          "metric": {
+            "device": "eth0",
+            "instance": "node-exporter:9100",
+            "job": "node-exporter",
+            "machine": "docker-desktop-linux-vm"
+          },
+          "value": [
+            1790005245,
+            "2021.202312979598"
+          ]
+        }
+      ]
+    }
+  ]
+}

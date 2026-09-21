@@ -1,0 +1,246 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 20701.0
+python_gc_objects_collected_total{generation="1"} 1647.0
+python_gc_objects_collected_total{generation="2"} 298.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 133.0
+python_gc_collections_total{generation="1"} 12.0
+python_gc_collections_total{generation="2"} 1.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="13",patchlevel="14",version="3.13.14"} 1.0
+# HELP http_requests_total Completed business HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{method="GET",route="/rooms",status="200"} 892.0
+http_requests_total{method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_requests_total{method="POST",route="/bookings",status="201"} 893.0
+http_requests_total{method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_requests_total{method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_requests_total{method="POST",route="/bookings",status="409"} 198.0
+http_requests_total{method="GET",route="/bookings",status="200"} 90.0
+# HELP http_requests_created Completed business HTTP requests
+# TYPE http_requests_created gauge
+http_requests_created{method="GET",route="/rooms",status="200"} 1.789965382165321e+09
+http_requests_created{method="GET",route="/rooms/{room_id}/availability",status="200"} 1.7899653821827762e+09
+http_requests_created{method="POST",route="/bookings",status="201"} 1.7899653821981282e+09
+http_requests_created{method="GET",route="/bookings/{booking_id}",status="200"} 1.789965382218223e+09
+http_requests_created{method="DELETE",route="/bookings/{booking_id}",status="200"} 1.7899653822395544e+09
+http_requests_created{method="POST",route="/bookings",status="409"} 1.7899653822812881e+09
+http_requests_created{method="GET",route="/bookings",status="200"} 1.7899653822921953e+09
+# HELP http_requests_in_progress Business requests currently executing
+# TYPE http_requests_in_progress gauge
+http_requests_in_progress{method="GET",route="/rooms"} 0.0
+http_requests_in_progress{method="GET",route="/rooms/{room_id}/availability"} 0.0
+http_requests_in_progress{method="POST",route="/bookings"} 0.0
+http_requests_in_progress{method="GET",route="/bookings/{booking_id}"} 0.0
+http_requests_in_progress{method="DELETE",route="/bookings/{booking_id}"} 0.0
+http_requests_in_progress{method="GET",route="/bookings"} 0.0
+# HELP http_request_duration_seconds Business request server duration
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.005",method="GET",route="/rooms",status="200"} 30.0
+http_request_duration_seconds_bucket{le="0.01",method="GET",route="/rooms",status="200"} 102.0
+http_request_duration_seconds_bucket{le="0.025",method="GET",route="/rooms",status="200"} 618.0
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/rooms",status="200"} 882.0
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.25",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="1.0",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="2.5",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="5.0",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="10.0",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_count{method="GET",route="/rooms",status="200"} 892.0
+http_request_duration_seconds_sum{method="GET",route="/rooms",status="200"} 19.10769150005217
+http_request_duration_seconds_bucket{le="0.005",method="GET",route="/rooms/{room_id}/availability",status="200"} 2.0
+http_request_duration_seconds_bucket{le="0.01",method="GET",route="/rooms/{room_id}/availability",status="200"} 29.0
+http_request_duration_seconds_bucket{le="0.025",method="GET",route="/rooms/{room_id}/availability",status="200"} 102.0
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/rooms/{room_id}/availability",status="200"} 777.0
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.25",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="1.0",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="2.5",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="5.0",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="10.0",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_count{method="GET",route="/rooms/{room_id}/availability",status="200"} 892.0
+http_request_duration_seconds_sum{method="GET",route="/rooms/{room_id}/availability",status="200"} 33.97453679994942
+http_request_duration_seconds_bucket{le="0.005",method="POST",route="/bookings",status="201"} 19.0
+http_request_duration_seconds_bucket{le="0.01",method="POST",route="/bookings",status="201"} 66.0
+http_request_duration_seconds_bucket{le="0.025",method="POST",route="/bookings",status="201"} 618.0
+http_request_duration_seconds_bucket{le="0.05",method="POST",route="/bookings",status="201"} 885.0
+http_request_duration_seconds_bucket{le="0.1",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="0.25",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="1.0",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="2.5",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="5.0",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="10.0",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_bucket{le="+Inf",method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_count{method="POST",route="/bookings",status="201"} 893.0
+http_request_duration_seconds_sum{method="POST",route="/bookings",status="201"} 18.985402599973895
+http_request_duration_seconds_bucket{le="0.005",method="GET",route="/bookings/{booking_id}",status="200"} 27.0
+http_request_duration_seconds_bucket{le="0.01",method="GET",route="/bookings/{booking_id}",status="200"} 158.0
+http_request_duration_seconds_bucket{le="0.025",method="GET",route="/bookings/{booking_id}",status="200"} 881.0
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.25",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="1.0",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="2.5",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="5.0",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="10.0",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_count{method="GET",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_sum{method="GET",route="/bookings/{booking_id}",status="200"} 12.380667700061167
+http_request_duration_seconds_bucket{le="0.005",method="DELETE",route="/bookings/{booking_id}",status="200"} 141.0
+http_request_duration_seconds_bucket{le="0.01",method="DELETE",route="/bookings/{booking_id}",status="200"} 299.0
+http_request_duration_seconds_bucket{le="0.025",method="DELETE",route="/bookings/{booking_id}",status="200"} 882.0
+http_request_duration_seconds_bucket{le="0.05",method="DELETE",route="/bookings/{booking_id}",status="200"} 892.0
+http_request_duration_seconds_bucket{le="0.1",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="0.25",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="0.5",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="1.0",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="2.5",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="5.0",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="10.0",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_bucket{le="+Inf",method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_count{method="DELETE",route="/bookings/{booking_id}",status="200"} 893.0
+http_request_duration_seconds_sum{method="DELETE",route="/bookings/{booking_id}",status="200"} 10.736978200096928
+http_request_duration_seconds_bucket{le="0.005",method="POST",route="/bookings",status="409"} 4.0
+http_request_duration_seconds_bucket{le="0.01",method="POST",route="/bookings",status="409"} 21.0
+http_request_duration_seconds_bucket{le="0.025",method="POST",route="/bookings",status="409"} 177.0
+http_request_duration_seconds_bucket{le="0.05",method="POST",route="/bookings",status="409"} 193.0
+http_request_duration_seconds_bucket{le="0.1",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="0.25",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="1.0",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="2.5",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="5.0",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="10.0",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_bucket{le="+Inf",method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_count{method="POST",route="/bookings",status="409"} 198.0
+http_request_duration_seconds_sum{method="POST",route="/bookings",status="409"} 3.5573820999998134
+http_request_duration_seconds_bucket{le="0.005",method="GET",route="/bookings",status="200"} 51.0
+http_request_duration_seconds_bucket{le="0.01",method="GET",route="/bookings",status="200"} 83.0
+http_request_duration_seconds_bucket{le="0.025",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="0.25",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="1.0",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="2.5",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="5.0",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="10.0",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_count{method="GET",route="/bookings",status="200"} 90.0
+http_request_duration_seconds_sum{method="GET",route="/bookings",status="200"} 0.5228003000302124
+# HELP http_request_duration_seconds_created Business request server duration
+# TYPE http_request_duration_seconds_created gauge
+http_request_duration_seconds_created{method="GET",route="/rooms",status="200"} 1.7899653821653476e+09
+http_request_duration_seconds_created{method="GET",route="/rooms/{room_id}/availability",status="200"} 1.7899653821828232e+09
+http_request_duration_seconds_created{method="POST",route="/bookings",status="201"} 1.7899653821981683e+09
+http_request_duration_seconds_created{method="GET",route="/bookings/{booking_id}",status="200"} 1.7899653822182405e+09
+http_request_duration_seconds_created{method="DELETE",route="/bookings/{booking_id}",status="200"} 1.7899653822395709e+09
+http_request_duration_seconds_created{method="POST",route="/bookings",status="409"} 1.789965382281307e+09
+http_request_duration_seconds_created{method="GET",route="/bookings",status="200"} 1.7899653822922122e+09
+# HELP db_operation_duration_seconds Repository wall time including pool wait and commit
+# TYPE db_operation_duration_seconds summary
+db_operation_duration_seconds_count{operation="active_count"} 9.0
+db_operation_duration_seconds_sum{operation="active_count"} 0.2032687999890186
+db_operation_duration_seconds_count{operation="readiness"} 3.0
+db_operation_duration_seconds_sum{operation="readiness"} 0.011016999997082166
+db_operation_duration_seconds_count{operation="list_rooms"} 892.0
+db_operation_duration_seconds_sum{operation="list_rooms"} 18.404030699952273
+db_operation_duration_seconds_count{operation="get_room"} 892.0
+db_operation_duration_seconds_sum{operation="get_room"} 14.210969499778003
+db_operation_duration_seconds_count{operation="availability"} 892.0
+db_operation_duration_seconds_sum{operation="availability"} 13.380567000021983
+db_operation_duration_seconds_count{operation="create_booking"} 1091.0
+db_operation_duration_seconds_sum{operation="create_booking"} 21.851855400200293
+db_operation_duration_seconds_count{operation="get_booking"} 892.0
+db_operation_duration_seconds_sum{operation="get_booking"} 11.927509400127747
+db_operation_duration_seconds_count{operation="cancel_booking"} 893.0
+db_operation_duration_seconds_sum{operation="cancel_booking"} 10.302609700054745
+db_operation_duration_seconds_count{operation="list_bookings"} 90.0
+db_operation_duration_seconds_sum{operation="list_bookings"} 0.44458859999576816
+# HELP db_operation_duration_seconds_created Repository wall time including pool wait and commit
+# TYPE db_operation_duration_seconds_created gauge
+db_operation_duration_seconds_created{operation="active_count"} 1.7899653755155532e+09
+db_operation_duration_seconds_created{operation="readiness"} 1.7899653760126948e+09
+db_operation_duration_seconds_created{operation="list_rooms"} 1.789965382164714e+09
+db_operation_duration_seconds_created{operation="get_room"} 1.7899653821777244e+09
+db_operation_duration_seconds_created{operation="availability"} 1.78996538218216e+09
+db_operation_duration_seconds_created{operation="create_booking"} 1.7899653821976752e+09
+db_operation_duration_seconds_created{operation="get_booking"} 1.78996538221797e+09
+db_operation_duration_seconds_created{operation="cancel_booking"} 1.7899653822393136e+09
+db_operation_duration_seconds_created{operation="list_bookings"} 1.789965382291779e+09
+# HELP bookings_created_total Committed bookings
+# TYPE bookings_created_total counter
+bookings_created_total 893.0
+# HELP bookings_created_created Committed bookings
+# TYPE bookings_created_created gauge
+bookings_created_created 1.789965375370565e+09
+# HELP bookings_cancelled_total Committed cancellation transitions
+# TYPE bookings_cancelled_total counter
+bookings_cancelled_total 893.0
+# HELP bookings_cancelled_created Committed cancellation transitions
+# TYPE bookings_cancelled_created gauge
+bookings_cancelled_created 1.7899653753705893e+09
+# HELP booking_conflicts_total Database-rejected overlaps
+# TYPE booking_conflicts_total counter
+booking_conflicts_total 198.0
+# HELP booking_conflicts_created Database-rejected overlaps
+# TYPE booking_conflicts_created gauge
+booking_conflicts_created 1.7899653753706062e+09
+# HELP active_bookings Confirmed bookings whose end is in the future (periodic DB count)
+# TYPE active_bookings gauge
+active_bookings 0.0
+# HELP booking_metrics_refresh_success Whether the most recent DB gauge refresh succeeded
+# TYPE booking_metrics_refresh_success gauge
+booking_metrics_refresh_success 1.0
+# HELP booking_metrics_last_refresh_timestamp_seconds Last successful gauge refresh UTC epoch
+# TYPE booking_metrics_last_refresh_timestamp_seconds gauge
+booking_metrics_last_refresh_timestamp_seconds 1.78996541574325e+09
+# HELP booking_lead_time_seconds Time from accepted booking creation to start
+# TYPE booking_lead_time_seconds histogram
+booking_lead_time_seconds_bucket{le="60.0"} 0.0
+booking_lead_time_seconds_bucket{le="300.0"} 0.0
+booking_lead_time_seconds_bucket{le="900.0"} 0.0
+booking_lead_time_seconds_bucket{le="3600.0"} 0.0
+booking_lead_time_seconds_bucket{le="21600.0"} 0.0
+booking_lead_time_seconds_bucket{le="86400.0"} 2.0
+booking_lead_time_seconds_bucket{le="604800.0"} 893.0
+booking_lead_time_seconds_bucket{le="2.592e+06"} 893.0
+booking_lead_time_seconds_bucket{le="3.1536e+07"} 893.0
+booking_lead_time_seconds_bucket{le="+Inf"} 893.0
+booking_lead_time_seconds_count 893.0
+booking_lead_time_seconds_sum 1.009849974904251e+08
+# HELP booking_lead_time_seconds_created Time from accepted booking creation to start
+# TYPE booking_lead_time_seconds_created gauge
+booking_lead_time_seconds_created 1.7899653753706884e+09
+# HELP fault_injections_total Deliberate local latency injections
+# TYPE fault_injections_total counter
+fault_injections_total 0.0
+# HELP fault_injections_created Deliberate local latency injections
+# TYPE fault_injections_created gauge
+fault_injections_created 1.78996537537078e+09
+# HELP logging_dropped_total Log records dropped because the bounded queue is full
+# TYPE logging_dropped_total counter
+logging_dropped_total 0.0
+# HELP logging_dropped_created Log records dropped because the bounded queue is full
+# TYPE logging_dropped_created gauge
+logging_dropped_created 1.7899653753707976e+09
+# HELP logging_sink_errors_total Failed local log writes
+# TYPE logging_sink_errors_total counter
+logging_sink_errors_total 0.0
+# HELP logging_sink_errors_created Failed local log writes
+# TYPE logging_sink_errors_created gauge
+logging_sink_errors_created 1.7899653753708162e+09

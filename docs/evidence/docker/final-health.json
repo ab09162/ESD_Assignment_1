@@ -1,0 +1,238 @@
+{
+  "verified_utc": "2026-09-21T15:56:53.109826+00:00",
+  "services": {
+    "app": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 402653184,
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      },
+      "fault_delay_enabled": "false"
+    },
+    "postgres": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 536870912,
+      "ports": {}
+    },
+    "prometheus": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 536870912,
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "9090"
+          }
+        ]
+      }
+    },
+    "grafana": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 402653184,
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3000"
+          }
+        ]
+      }
+    },
+    "node-exporter": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 134217728,
+      "ports": {}
+    },
+    "elasticsearch": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 1610612736,
+      "ports": {
+        "9200/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "9200"
+          }
+        ]
+      }
+    },
+    "kibana": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 1073741824,
+      "ports": {
+        "5601/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "5601"
+          }
+        ]
+      }
+    },
+    "filebeat": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 268435456,
+      "ports": {}
+    },
+    "elastic-setup": {
+      "status": "exited",
+      "health": null,
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 134217728,
+      "ports": {}
+    },
+    "log-init": {
+      "status": "exited",
+      "health": null,
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 67108864,
+      "ports": {}
+    },
+    "cardinality-demo": {
+      "status": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom_killed": false,
+      "restart_count": 0,
+      "memory_limit_bytes": 134217728,
+      "ports": {
+        "8010/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8010"
+          }
+        ]
+      },
+      "high_cardinality": "false"
+    }
+  },
+  "stats": [
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.57%",
+      "Container": "020bf237b12dd4fcb8e3cc793362c7ff9323a65b6d39d68f83cd2e376fa96cea",
+      "ID": "020bf237b12d",
+      "MemPerc": "14.63%",
+      "MemUsage": "56.16MiB / 384MiB",
+      "Name": "campus-observability-app-1",
+      "NetIO": "308kB / 1.48MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "0B / 610kB",
+      "CPUPerc": "0.02%",
+      "Container": "98e5a4669a7ec6cb93566bb00d0c6f8e966e6ea518e22228b86a5e98ddd740a6",
+      "ID": "98e5a4669a7e",
+      "MemPerc": "7.86%",
+      "MemUsage": "40.24MiB / 512MiB",
+      "Name": "campus-observability-postgres-1",
+      "NetIO": "125kB / 98.6kB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "0B / 40.6MB",
+      "CPUPerc": "1.77%",
+      "Container": "b5de19a4fd99eea4a0652a636366caf41323ea159f7ff6cf73bb6e93fbfd687d",
+      "ID": "b5de19a4fd99",
+      "MemPerc": "11.65%",
+      "MemUsage": "59.66MiB / 512MiB",
+      "Name": "campus-observability-prometheus-1",
+      "NetIO": "45.4MB / 8.6MB",
+      "PIDs": "22"
+    },
+    {
+      "BlockIO": "0B / 209kB",
+      "CPUPerc": "0.58%",
+      "Container": "1de9a5259e21f41966a69f71a470d9e3a22a07ebbffdc649efacdb8a8ef01348",
+      "ID": "1de9a5259e21",
+      "MemPerc": "26.35%",
+      "MemUsage": "101.2MiB / 384MiB",
+      "Name": "campus-observability-grafana-1",
+      "NetIO": "66.1kB / 100kB",
+      "PIDs": "24"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.00%",
+      "Container": "9b21c48cf50706ecf4f693176c7960ec5928662338e0c94bbb6e9213ebfcf6ac",
+      "ID": "9b21c48cf507",
+      "MemPerc": "6.86%",
+      "MemUsage": "8.781MiB / 128MiB",
+      "Name": "campus-observability-node-exporter-1",
+      "NetIO": "353kB / 5.47MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "0B / 521MB",
+      "CPUPerc": "2.73%",
+      "Container": "2ae6e93fcf01349333c00653aac969fb5aa0a0e1e9bf19831208c007d68a3965",
+      "ID": "2ae6e93fcf01",
+      "MemPerc": "80.18%",
+      "MemUsage": "1.203GiB / 1.5GiB",
+      "Name": "campus-observability-elasticsearch-1",
+      "NetIO": "83MB / 19.6MB",
+      "PIDs": "209"
+    },
+    {
+      "BlockIO": "0B / 8.19kB",
+      "CPUPerc": "2.29%",
+      "Container": "f1b64e7c3f4386786caa05fbe29cc7f36ef7bcb053636253ed92817c333fb2f2",
+      "ID": "f1b64e7c3f43",
+      "MemPerc": "52.97%",
+      "MemUsage": "542.5MiB / 1GiB",
+      "Name": "campus-observability-kibana-1",
+      "NetIO": "2.74MB / 3.13MB",
+      "PIDs": "12"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.15%",
+      "Container": "c8800ac23c1fd5575376af2eadb0d0aba33025a7b08a3e07e88ff2174de1c327",
+      "ID": "c8800ac23c1f",
+      "MemPerc": "19.49%",
+      "MemUsage": "49.9MiB / 256MiB",
+      "Name": "campus-observability-filebeat-1",
+      "NetIO": "22.5kB / 25.8kB",
+      "PIDs": "14"
+    }
+  ]
+}

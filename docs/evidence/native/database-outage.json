@@ -1,0 +1,26 @@
+[
+  {
+    "phase": "normal",
+    "utc": "2026-09-21T04:41:12.928518+00:00",
+    "/health": 200,
+    "/ready": 200,
+    "/rooms": 200,
+    "/metrics": 200
+  },
+  {
+    "phase": "database_stopped",
+    "utc": "2026-09-21T04:41:13.342761+00:00",
+    "/health": 200,
+    "/ready": 503,
+    "/rooms": 503,
+    "/metrics": 200
+  },
+  {
+    "phase": "database_restarted_same_app",
+    "utc": "2026-09-21T04:41:18.168436+00:00",
+    "/health": 200,
+    "/ready": 200,
+    "/rooms": 200,
+    "/metrics": 200
+  }
+]

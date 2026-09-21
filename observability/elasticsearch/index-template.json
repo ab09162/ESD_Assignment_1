@@ -1,0 +1,30 @@
+{
+  "index_patterns": ["campus-logs-*"],
+  "priority": 200,
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "index.lifecycle.name": "campus-logs-7d",
+      "index.lifecycle.rollover_alias": "campus-logs"
+    },
+    "mappings": {
+      "dynamic": false,
+      "properties": {
+        "@timestamp": {"type": "date"},
+        "timestamp": {"type": "date"},
+        "service": {"type": "keyword"},
+        "severity": {"type": "keyword"},
+        "message": {"type": "match_only_text"},
+        "request_id": {"type": "keyword", "ignore_above": 64},
+        "method": {"type": "keyword"},
+        "route": {"type": "keyword"},
+        "status_code": {"type": "integer"},
+        "duration_ms": {"type": "double"},
+        "delay_ms": {"type": "integer"},
+        "operation": {"type": "keyword"},
+        "error_type": {"type": "keyword"}
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+[
+  "k6_http_req_duration_avg",
+  "k6_http_req_duration_p95",
+  "k6_http_req_duration_p99",
+  "k6_unexpected_responses_rate",
+  "k6_vus",
+  "k6_vus_max"
+]
