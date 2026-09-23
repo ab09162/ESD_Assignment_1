@@ -1,0 +1,34 @@
+{
+  "verified_utc": "2026-09-23T09:25:33.795727+00:00",
+  "endpoints": {
+    "/health": {
+      "status": 200,
+      "bytes": 15
+    },
+    "/ready": {
+      "status": 200,
+      "bytes": 18
+    },
+    "/docs": {
+      "status": 200,
+      "bytes": 951
+    },
+    "/openapi.json": {
+      "status": 200,
+      "bytes": 6564
+    },
+    "/metrics": {
+      "status": 200,
+      "bytes": 10415
+    },
+    "/rooms": {
+      "status": 200,
+      "bytes": 159
+    }
+  },
+  "kibana": {
+    "level": "available",
+    "summary": "All services and plugins are available"
+  },
+  "viewer_private_paths": "404 for all checks"
+}

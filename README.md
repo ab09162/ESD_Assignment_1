@@ -2,7 +2,13 @@
 
 A small, concurrent room-reservation API with a complete local metrics and logging stack. Students can inspect three campus rooms, check availability, create a reservation, and cancel it. Swagger is the UI. The engineering focus is correctness under contention, measurable performance, diagnosable failures, and repeatable experiments.
 
-**Verification status:** see [docs/VERIFICATION.md](docs/VERIFICATION.md) for actual Docker Desktop results, saved evidence, and remaining manual screenshots. Native Windows measurements from the earlier implementation are kept separately and are not presented as Docker measurements.
+**Verification status:** see [docs/VERIFICATION.md](docs/VERIFICATION.md) for actual Docker Desktop results, saved evidence, and included screenshot evidence. Native Windows measurements from the earlier implementation are kept separately and are not presented as Docker measurements.
+
+**Human-readable submission files:** the project root contains README.pdf, REPORT.pdf, ASSIGNMENT-CHECKLIST.pdf, VIVA-NOTES.pdf, VERIFICATION.pdf and SCREENSHOT-CHECKLIST.pdf. The identical screenshot instructions are also in SCREENSHOT-CHECKLIST.txt. Read these PDFs; no manual Markdown conversion is required. The 15 original user-captured PNGs are preserved in screenshots/ and included in REPORT.pdf.
+
+The read-only submission page at http://localhost:8011 shows actual saved services/test/concurrency evidence and prepared screenshot links. If a future restart closes this optional viewer, run `python scripts/submission-viewer.py` from the root. It serves only public submission files, never `.env` or arbitrary project files.
+
+After screenshots exist, `python scripts/build-submission-pdfs.py` inserts the original PNGs from screenshots/ (with root fallback) into REPORT.pdf and regenerates all six PDFs. `python scripts/validate-submission-pdfs.py` reopens and renders every page for visual review. Optional host dependencies are in `requirements-pdf.txt`; these are separate from application dependencies. The current PDFs are already generated and validated for you.
 
 ## Architecture
 
@@ -29,7 +35,7 @@ Use Docker Desktop with Linux containers and Compose v2 (`docker compose version
 From the repository root:
 
 ```powershell
-Copy-Item .env.example .env
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 docker compose config --quiet
 docker compose up --build -d --wait --wait-timeout 300
 docker compose ps -a
@@ -43,7 +49,7 @@ docker compose exec -T app python scripts/verify-stack.py
 Bash equivalents:
 
 ```bash
-cp .env.example .env
+test -f .env || cp .env.example .env
 docker compose config --quiet
 docker compose up --build -d --wait --wait-timeout 300
 docker compose exec -T app python scripts/setup-kibana.py

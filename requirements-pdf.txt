@@ -1,0 +1,6 @@
+# Optional host tools for generating and validating the six submission PDFs.
+reportlab==5.0.1
+markdown-it-py==4.2.0
+pypdf==6.19.0
+pymupdf==1.28.2
+pdfplumber==0.11.10

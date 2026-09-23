@@ -1,0 +1,84 @@
+{
+  "verified_utc": "2026-09-23T14:42:46.564978+00:00",
+  "candidate_files": 173,
+  "private_environment_values_found": false,
+  "oversized_files": false,
+  "pdf_pages_rendered_and_visually_reviewed": true,
+  "screenshots": [
+    {
+      "file": "screenshots/01-docker-services.png",
+      "sha256": "e475a89969f467be76d2b640a20eb271b94a47a6dd9fd36f489e2c3b72389b3b",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/02-api-swagger.png",
+      "sha256": "f04c020cc66b6909abed606e20eb73c385f0edbceca0336eebe8aa262743281b",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/03-prometheus-targets.png",
+      "sha256": "89dc232dd52227cee94c01ff9446fac6242469c0f0077733054a8e07c477b792",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/04-grafana-overview.png",
+      "sha256": "2fa0f2600eaa722f92dfd3887542f8cfdd1f50bb1c2499c4a2b274184313fddc",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/05-grafana-throughput.png",
+      "sha256": "447888dc9bbc294b6ccc3a60a1d51b1bf6c768680c2a68b809e67ebe12f61ce9",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/06-grafana-p95-p99.png",
+      "sha256": "ff26471438d2c083de14e11ef2d65b39c77614f2a0deb85f680caeafa9b931f5",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/07-grafana-business-metrics.png",
+      "sha256": "74a5e33b3c54daea68e0f967175a04e63baa14892c24deb25bbd57aa1c8712dd",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/08-node-exporter.png",
+      "sha256": "55772305dfc081db9b91c5d2a9ff9bed5a11b5e1dfc3b75b92452530b532ffe4",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/09-kibana-request-id.png",
+      "sha256": "bc8d0902d1117d861b62df513c8979d96e4b4a2965d1814aa15786de9a553470",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/10-anomaly-baseline-fault-recovery.png",
+      "sha256": "a25c27a4208b42ef36f1df643e973875c4751a6ebeb6358cfe4467fda0a6e369",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/11-cardinality-100-series.png",
+      "sha256": "dd914594245781d1fd6720e201940496f684c02427a30c058992797adfa814d3",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/12-cardinality-1-series.png",
+      "sha256": "f22e935c60bc50bfeebf4c8454b2c832e19875b9bb8c6c313003864fc72debde",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/13-tests-passed.png",
+      "sha256": "69bad91faa759b8d491a43de3df13064175245e686ce504e9504d113068217a8",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/14-concurrency-test.png",
+      "sha256": "3171d4eb01c9a682ee43d7c765f618ce4510d4f910024428bce3015ded72f1a9",
+      "original_pixels_preserved_in_report": true
+    },
+    {
+      "file": "screenshots/15-fault-request-id.png",
+      "sha256": "bb7ff356a8c9ea18e1fec35732c55e5c65d10dccdf04333827d616991a22c2c7",
+      "original_pixels_preserved_in_report": true
+    }
+  ]
+}

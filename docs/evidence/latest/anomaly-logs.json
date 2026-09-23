@@ -1,0 +1,146 @@
+[
+  {
+    "phase": "baseline",
+    "start": "2026-09-23T04:22:08.9399646Z",
+    "end": "2026-09-23T04:24:11.1910462Z",
+    "exit_code": 0,
+    "fault_count": 0,
+    "fault_document": []
+  },
+  {
+    "phase": "fault",
+    "start": "2026-09-23T04:29:25.3131975Z",
+    "end": "2026-09-23T04:31:28.7047914Z",
+    "exit_code": 0,
+    "fault_count": 1606,
+    "fault_document": [
+      {
+        "_index": "campus-logs-000002",
+        "_id": "PWqIzKABPRirUY7aSD5m",
+        "_score": 0.0,
+        "_source": {
+          "@timestamp": "2026-09-23T04:31:16.720Z",
+          "log": {
+            "file": {
+              "path": "/var/log/campus/app.jsonl",
+              "device_id": "2112",
+              "inode": "61146"
+            },
+            "offset": 1749879
+          },
+          "request_id": "b5d0153e-b4a9-425b-a30a-73942337346d",
+          "operation": "fault_delay",
+          "agent": {
+            "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+            "name": "342412dc9ecc",
+            "type": "filebeat",
+            "version": "8.19.0"
+          },
+          "timestamp": "2026-09-23T04:31:16.720407+00:00",
+          "severity": "WARNING",
+          "message": "fault_delay_injected",
+          "service": "campus-booking",
+          "route": "/rooms/{room_id}/availability",
+          "method": "GET",
+          "delay_ms": 500
+        }
+      }
+    ],
+    "correlation": {
+      "took": 3,
+      "timed_out": false,
+      "_shards": {
+        "total": 2,
+        "successful": 2,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 2,
+          "relation": "eq"
+        },
+        "max_score": null,
+        "hits": [
+          {
+            "_index": "campus-logs-000002",
+            "_id": "PWqIzKABPRirUY7aSD5m",
+            "_score": null,
+            "_source": {
+              "@timestamp": "2026-09-23T04:31:16.720Z",
+              "log": {
+                "file": {
+                  "path": "/var/log/campus/app.jsonl",
+                  "device_id": "2112",
+                  "inode": "61146"
+                },
+                "offset": 1749879
+              },
+              "request_id": "b5d0153e-b4a9-425b-a30a-73942337346d",
+              "operation": "fault_delay",
+              "agent": {
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "342412dc9ecc",
+                "type": "filebeat",
+                "version": "8.19.0"
+              },
+              "timestamp": "2026-09-23T04:31:16.720407+00:00",
+              "severity": "WARNING",
+              "message": "fault_delay_injected",
+              "service": "campus-booking",
+              "route": "/rooms/{room_id}/availability",
+              "method": "GET",
+              "delay_ms": 500
+            },
+            "sort": [
+              1790137876720
+            ]
+          },
+          {
+            "_index": "campus-logs-000002",
+            "_id": "a2qIzKABPRirUY7aSD5m",
+            "_score": null,
+            "_source": {
+              "@timestamp": "2026-09-23T04:31:17.229Z",
+              "agent": {
+                "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+                "name": "342412dc9ecc",
+                "type": "filebeat",
+                "version": "8.19.0"
+              },
+              "service": "campus-booking",
+              "severity": "INFO",
+              "duration_ms": 509.231,
+              "operation": "http_request",
+              "route": "/rooms/{room_id}/availability",
+              "request_id": "b5d0153e-b4a9-425b-a30a-73942337346d",
+              "method": "GET",
+              "status_code": 200,
+              "log": {
+                "offset": 1762862,
+                "file": {
+                  "path": "/var/log/campus/app.jsonl",
+                  "device_id": "2112",
+                  "inode": "61146"
+                }
+              },
+              "timestamp": "2026-09-23T04:31:17.229672+00:00",
+              "message": "request_completed"
+            },
+            "sort": [
+              1790137877229
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "phase": "recovery",
+    "start": "2026-09-23T04:36:43.1053075Z",
+    "end": "2026-09-23T04:38:46.0826790Z",
+    "exit_code": 0,
+    "fault_count": 0,
+    "fault_document": []
+  }
+]

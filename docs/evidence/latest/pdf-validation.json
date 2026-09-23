@@ -1,0 +1,56 @@
+[
+  {
+    "file": "README.pdf",
+    "absolute_path": "C:\\Users\\Hamza\\Desktop\\ESD\\Assignment_1\\README.pdf",
+    "bytes": 125884,
+    "pages": 8,
+    "links": 20,
+    "all_pages_rendered": true,
+    "text_bounds_warnings": []
+  },
+  {
+    "file": "REPORT.pdf",
+    "absolute_path": "C:\\Users\\Hamza\\Desktop\\ESD\\Assignment_1\\REPORT.pdf",
+    "bytes": 5436325,
+    "pages": 20,
+    "links": 0,
+    "all_pages_rendered": true,
+    "text_bounds_warnings": []
+  },
+  {
+    "file": "ASSIGNMENT-CHECKLIST.pdf",
+    "absolute_path": "C:\\Users\\Hamza\\Desktop\\ESD\\Assignment_1\\ASSIGNMENT-CHECKLIST.pdf",
+    "bytes": 110192,
+    "pages": 7,
+    "links": 0,
+    "all_pages_rendered": true,
+    "text_bounds_warnings": []
+  },
+  {
+    "file": "VIVA-NOTES.pdf",
+    "absolute_path": "C:\\Users\\Hamza\\Desktop\\ESD\\Assignment_1\\VIVA-NOTES.pdf",
+    "bytes": 105134,
+    "pages": 3,
+    "links": 0,
+    "all_pages_rendered": true,
+    "text_bounds_warnings": []
+  },
+  {
+    "file": "VERIFICATION.pdf",
+    "absolute_path": "C:\\Users\\Hamza\\Desktop\\ESD\\Assignment_1\\VERIFICATION.pdf",
+    "bytes": 102085,
+    "pages": 3,
+    "links": 0,
+    "all_pages_rendered": true,
+    "text_bounds_warnings": []
+  },
+  {
+    "file": "SCREENSHOT-CHECKLIST.pdf",
+    "absolute_path": "C:\\Users\\Hamza\\Desktop\\ESD\\Assignment_1\\SCREENSHOT-CHECKLIST.pdf",
+    "bytes": 85874,
+    "pages": 5,
+    "links": 15,
+    "all_pages_rendered": true,
+    "text_bounds_warnings": []
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "reviewed_utc": "2026-09-23T09:23:47.699762+00:00",
+  "services": [
+    "app",
+    "postgres",
+    "prometheus",
+    "grafana",
+    "node-exporter",
+    "elasticsearch",
+    "kibana",
+    "filebeat",
+    "elastic-setup",
+    "log-init",
+    "cardinality-demo"
+  ],
+  "scope": "Retained Docker logs; removed app containers are supplemented by indexed experiment evidence.",
+  "line_count": 1047,
+  "categories": {
+    "optional_udev_metadata_absent": 1,
+    "optional_kibana_screenshotting_sandbox_unavailable": 1,
+    "optional_kibana_session_reporting_keys_ephemeral": 3,
+    "local_http_without_tls": 2,
+    "optional_kibana_email_connector_not_configured": 1,
+    "grafana_duplicate_builtin_table_registration": 2,
+    "elasticsearch_bundled_library_logging_notice": 3,
+    "requires_review": 15,
+    "elasticsearch_optional_inference_initialization_warning": 1,
+    "elasticsearch_host_timer_discontinuity": 6,
+    "kibana_task_manager_initial_partition_claim": 6,
+    "optional_kibana_ai_assistant_license_unavailable": 1
+  },
+  "samples": {
+    "optional_udev_metadata_absent": [
+      "node-exporter-1     | time=2026-09-23T04:16:30.764Z level=ERROR source=diskstats_linux.go:264 msg=\"Failed to open directory, disabling udev device properties\" collector=diskstats path=/run/udev/data"
+    ],
+    "optional_kibana_screenshotting_sandbox_unavailable": [
+      "kibana-1            | [2026-09-23T04:17:49.489+00:00][WARN ][plugins.screenshotting.config] Chromium sandbox provides an additional layer of protection, but is not supported for Linux Ubuntu 24.04 OS. Automatically setting 'xpack.screenshotting.browser.chromium.disableSandbox: true'."
+    ],
+    "optional_kibana_session_reporting_keys_ephemeral": [
+      "kibana-1            | [2026-09-23T04:17:50.240+00:00][WARN ][plugins.security.config] Generating a random key for xpack.security.encryptionKey. To prevent sessions from being invalidated on restart, please set xpack.security.encryptionKey in the kibana.yml or use the bin/kibana-encryption-keys command.",
+      "kibana-1            | [2026-09-23T04:17:50.291+00:00][WARN ][plugins.security.config] Generating a random key for xpack.security.encryptionKey. To prevent sessions from being invalidated on restart, please set xpack.security.encryptionKey in the kibana.yml or use the bin/kibana-encryption-keys command.",
+      "kibana-1            | [2026-09-23T04:18:01.260+00:00][WARN ][plugins.reporting.config] Generating a random key for xpack.reporting.encryptionKey. To prevent sessions from being invalidated on restart, please set xpack.reporting.encryptionKey in the kibana.yml or use the bin/kibana-encryption-keys command."
+    ],
+    "local_http_without_tls": [
+      "kibana-1            | [2026-09-23T04:17:50.240+00:00][WARN ][plugins.security.config] Session cookies will be transmitted over insecure connections. This is not recommended.",
+      "kibana-1            | [2026-09-23T04:17:50.292+00:00][WARN ][plugins.security.config] Session cookies will be transmitted over insecure connections. This is not recommended."
+    ],
+    "optional_kibana_email_connector_not_configured": [
+      "kibana-1            | [2026-09-23T04:17:51.315+00:00][INFO ][plugins.notifications] Email Service Error: Email connector not specified."
+    ],
+    "grafana_duplicate_builtin_table_registration": [
+      "grafana-1           | logger=plugins.registration t=2026-09-23T04:16:33.543184128Z level=error msg=\"Could not register plugin\" pluginId=table error=\"plugin table is already registered\"",
+      "grafana-1           | logger=plugins.initialization t=2026-09-23T04:16:33.543293473Z level=error msg=\"Could not initialize plugin\" pluginId=table error=\"plugin table is already registered\""
+    ],
+    "elasticsearch_bundled_library_logging_notice": [
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T04:16:44.400Z\", \"log.level\": \"WARN\", \"message\":\"SLF4J: No SLF4J providers were found.\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"main\",\"log.logger\":\"stderr\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}",
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T04:16:44.401Z\", \"log.level\": \"WARN\", \"message\":\"SLF4J: Defaulting to no-operation (NOP) logger implementation\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"main\",\"log.logger\":\"stderr\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}",
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T04:16:44.401Z\", \"log.level\": \"WARN\", \"message\":\"SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"main\",\"log.logger\":\"stderr\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}"
+    ],
+    "requires_review": [
+      "grafana-1           | logger=authn.service t=2026-09-23T05:29:56.104817428Z level=warn msg=\"Failed to authenticate request\" client=auth.client.session error=\"user token not found\"",
+      "grafana-1           | logger=authn.service t=2026-09-23T05:29:56.109754051Z level=warn msg=\"Failed to authenticate request\" client=auth.client.session error=\"user token not found\"",
+      "grafana-1           | logger=authn.service t=2026-09-23T05:29:56.272876066Z level=warn msg=\"Failed to authenticate request\" client=auth.client.session error=\"user token not found\"",
+      "grafana-1           | logger=authn.service t=2026-09-23T05:29:59.104458984Z level=warn msg=\"Failed to authenticate request\" client=auth.client.session error=\"user token not found\"",
+      "grafana-1           | logger=authn.service t=2026-09-23T05:29:59.172149704Z level=warn msg=\"Failed to authenticate request\" client=auth.client.session error=\"user token not found\""
+    ],
+    "elasticsearch_optional_inference_initialization_warning": [
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T04:16:57.993Z\", \"log.level\": \"WARN\", \"message\":\"Failed to revoke access to default inference endpoint IDs: [rainbow-sprinkles, rerank-v1, multilingual-embed-v1, elser-v2], error: org.elasticsearch.cluster.block.ClusterBlockException: blocked by: [SERVICE_UNAVAILABLE/1/state not recovered / initialized];\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"elasticsearch[54fcaf1e9dbf][inference_utility][T#1]\",\"log.logger\":\"org.elasticsearch.xpack.inference.services.elastic.authorization.ElasticInferenceServiceAuthorizationHandler\",\"elasticsearch.cluster.uuid\":\"3D8cr3_QSz2M57kkexSZng\",\"elasticsearch.node.id\":\"l9qzwHhNS2WJ2_tn6B-uLQ\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}"
+    ],
+    "elasticsearch_host_timer_discontinuity": [
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T04:55:36.489Z\", \"log.level\": \"WARN\", \"message\":\"timer thread slept for [7.5m/455822ms] on absolute clock which is above the warn threshold of [5000ms]\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"elasticsearch[54fcaf1e9dbf][[timer]]\",\"log.logger\":\"org.elasticsearch.threadpool.ThreadPool\",\"elasticsearch.cluster.uuid\":\"3D8cr3_QSz2M57kkexSZng\",\"elasticsearch.node.id\":\"l9qzwHhNS2WJ2_tn6B-uLQ\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}",
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T05:29:55.029Z\", \"log.level\": \"WARN\", \"message\":\"timer thread slept for [12.7m/767579ms] on absolute clock which is above the warn threshold of [5000ms]\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"elasticsearch[54fcaf1e9dbf][[timer]]\",\"log.logger\":\"org.elasticsearch.threadpool.ThreadPool\",\"elasticsearch.cluster.uuid\":\"3D8cr3_QSz2M57kkexSZng\",\"elasticsearch.node.id\":\"l9qzwHhNS2WJ2_tn6B-uLQ\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}",
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T05:40:53.520Z\", \"log.level\": \"WARN\", \"message\":\"timer thread slept for [10.8m/653685ms] on absolute clock which is above the warn threshold of [5000ms]\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"elasticsearch[54fcaf1e9dbf][[timer]]\",\"log.logger\":\"org.elasticsearch.threadpool.ThreadPool\",\"elasticsearch.cluster.uuid\":\"3D8cr3_QSz2M57kkexSZng\",\"elasticsearch.node.id\":\"l9qzwHhNS2WJ2_tn6B-uLQ\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}",
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T06:37:25.600Z\", \"log.level\": \"WARN\", \"message\":\"timer thread slept for [20s/20022ms] on absolute clock which is above the warn threshold of [5000ms]\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"elasticsearch[54fcaf1e9dbf][[timer]]\",\"log.logger\":\"org.elasticsearch.threadpool.ThreadPool\",\"elasticsearch.cluster.uuid\":\"3D8cr3_QSz2M57kkexSZng\",\"elasticsearch.node.id\":\"l9qzwHhNS2WJ2_tn6B-uLQ\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}",
+      "elasticsearch-1     | {\"@timestamp\":\"2026-09-23T09:10:50.460Z\", \"log.level\": \"WARN\", \"message\":\"timer thread slept for [1.2h/4611221ms] on absolute clock which is above the warn threshold of [5000ms]\", \"ecs.version\": \"1.2.0\",\"service.name\":\"ES_ECS\",\"event.dataset\":\"elasticsearch.server\",\"process.thread.name\":\"elasticsearch[54fcaf1e9dbf][[timer]]\",\"log.logger\":\"org.elasticsearch.threadpool.ThreadPool\",\"elasticsearch.cluster.uuid\":\"3D8cr3_QSz2M57kkexSZng\",\"elasticsearch.node.id\":\"l9qzwHhNS2WJ2_tn6B-uLQ\",\"elasticsearch.node.name\":\"54fcaf1e9dbf\",\"elasticsearch.cluster.name\":\"campus-local\"}"
+    ],
+    "kibana_task_manager_initial_partition_claim": [
+      "kibana-1            | [2026-09-23T04:18:19.147+00:00][WARN ][plugins.taskManager] Background task node \"8bfc85cf-3606-48aa-8cd7-2894c6e8921d\" has no assigned partitions, claiming against all partitions",
+      "kibana-1            | [2026-09-23T04:55:38.013+00:00][WARN ][plugins.taskManager] Background task node \"8bfc85cf-3606-48aa-8cd7-2894c6e8921d\" has no assigned partitions, claiming against all partitions",
+      "kibana-1            | [2026-09-23T05:29:55.401+00:00][WARN ][plugins.taskManager] Background task node \"8bfc85cf-3606-48aa-8cd7-2894c6e8921d\" has no assigned partitions, claiming against all partitions",
+      "kibana-1            | [2026-09-23T05:40:54.883+00:00][WARN ][plugins.taskManager] Background task node \"8bfc85cf-3606-48aa-8cd7-2894c6e8921d\" has no assigned partitions, claiming against all partitions",
+      "kibana-1            | [2026-09-23T09:10:50.941+00:00][WARN ][plugins.taskManager] Background task node \"8bfc85cf-3606-48aa-8cd7-2894c6e8921d\" has no assigned partitions, claiming against all partitions"
+    ],
+    "optional_kibana_ai_assistant_license_unavailable": [
+      "kibana-1            | [2026-09-23T04:18:20.689+00:00][WARN ][plugins.elasticAssistant.service] Error initializing AI assistant resources: Platinum, Enterprise or trial license needed"
+    ]
+  }
+}

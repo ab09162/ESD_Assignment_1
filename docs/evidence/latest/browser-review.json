@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-23",
+  "observed": {
+    "node": "CPU 8.50%, memory 18.3%, disk and network data visible in Linux VM dashboard",
+    "cardinality_high": 100,
+    "cardinality_low": 1,
+    "anomaly": "Visible low latency, raised latency and recovered latency in prepared chart",
+    "fault_logs": "Two correlated documents: fault_delay_injected and request_completed, 509.231 ms",
+    "viewer": "All eight services healthy, 26 passed, one winner and 19 conflicts"
+  }
+}

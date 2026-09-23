@@ -1,0 +1,1326 @@
+{
+  "utc": "2026-09-23T04:24:07.464432+00:00",
+  "node": {
+    "node_uname_info": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "node_uname_info",
+              "domainname": "localdomain",
+              "exported_machine": "x86_64",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "nodename": "f7f24c4f943c",
+              "release": "6.6.87.2-microsoft-standard-WSL2",
+              "sysname": "Linux",
+              "version": "#1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025"
+            },
+            "value": [
+              1790137447.521,
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    "node_memory_MemTotal_bytes": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "node_memory_MemTotal_bytes",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm"
+            },
+            "value": [
+              1790137447.524,
+              "16624316416"
+            ]
+          }
+        ]
+      }
+    },
+    "count(node_cpu_seconds_total{mode=\"idle\"})": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1790137447.527,
+              "16"
+            ]
+          }
+        ]
+      }
+    },
+    "node_filesystem_size_bytes": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "C:\\134",
+              "fstype": "9p",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/host/c"
+            },
+            "value": [
+              1790137447.542,
+              "1022960332800"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "C:\\134",
+              "fstype": "9p",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/host/c"
+            },
+            "value": [
+              1790137447.542,
+              "1022960332800"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "C:\\134",
+              "fstype": "9p",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/host/c"
+            },
+            "value": [
+              1790137447.542,
+              "1022960332800"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "drivers",
+              "fstype": "9p",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/usr/lib/wsl/drivers"
+            },
+            "value": [
+              1790137447.542,
+              "1022960332800"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "drivers",
+              "fstype": "9p",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/usr/lib/wsl/drivers"
+            },
+            "value": [
+              1790137447.542,
+              "1022960332800"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/host/wsl"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/host/wsl/docker-desktop/shared-sockets/guest-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/host/wsl/docker-desktop/shared-sockets/host-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/host/wslg"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/dev/shm"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/host/wsl"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/host/wsl/docker-desktop/shared-sockets/guest-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/host/wsl/docker-desktop/shared-sockets/host-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/host/wslg"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/run"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/run/lock"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/run/shm"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/run/user"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/tmp/.X11-unix"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/cross-distro-router"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/host/wsl"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/host/wsl/docker-desktop/shared-sockets/guest-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/host/wsl/docker-desktop/shared-sockets/host-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/host/wslg"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/guest-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/host-services"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "none",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/telemetry"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "rootfs",
+              "fstype": "rootfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/init"
+            },
+            "value": [
+              1790137447.542,
+              "8306995200"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "tmpfs",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run"
+            },
+            "value": [
+              1790137447.542,
+              "1662435328"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "tmpfs",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/shm"
+            },
+            "value": [
+              1790137447.542,
+              "8312156160"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "tmpfs",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/tmp"
+            },
+            "value": [
+              1790137447.542,
+              "1662435328"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "tmpfs",
+              "fstype": "tmpfs",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/var"
+            },
+            "value": [
+              1790137447.542,
+              "8312160256"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/host/wslg/distro"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/host/wslg/distro"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/host/wslg/distro"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/usr/lib/modules"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sdd",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/usr/lib/wsl"
+            },
+            "value": [
+              1790137447.542,
+              "133343232"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sde",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/mnt/docker-desktop-disk"
+            },
+            "value": [
+              1790137447.542,
+              "1081101176832"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sde",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/parent-distro/mnt/docker-desktop-disk"
+            },
+            "value": [
+              1790137447.542,
+              "1081101176832"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sde",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/run/desktop/mnt/docker-desktop-disk"
+            },
+            "value": [
+              1790137447.542,
+              "1081101176832"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_filesystem_size_bytes",
+              "device": "/dev/sde",
+              "fstype": "ext4",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm",
+              "mountpoint": "/var/lib"
+            },
+            "value": [
+              1790137447.542,
+              "1081101176832"
+            ]
+          }
+        ]
+      }
+    },
+    "node_network_receive_bytes_total": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "node_network_receive_bytes_total",
+              "device": "eth0",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm"
+            },
+            "value": [
+              1790137447.545,
+              "62086"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "node_network_receive_bytes_total",
+              "device": "lo",
+              "instance": "node-exporter:9100",
+              "job": "node-exporter",
+              "machine": "docker-desktop-linux-vm"
+            },
+            "value": [
+              1790137447.545,
+              "2845558"
+            ]
+          }
+        ]
+      }
+    },
+    "node_scrape_collector_success == 0": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": []
+      }
+    },
+    "process_resident_memory_bytes{job=\"campus-app\"}": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "process_resident_memory_bytes",
+              "instance": "app:8000",
+              "job": "campus-app",
+              "service": "campus-booking"
+            },
+            "value": [
+              1790137447.551,
+              "80060416"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "kibana_data_view": {
+    "data_view": {
+      "id": "campus-logs",
+      "version": "WzExLDNd",
+      "title": "campus-logs-*",
+      "timeFieldName": "@timestamp",
+      "sourceFilters": [],
+      "fieldFormats": {},
+      "runtimeFieldMap": {},
+      "fieldAttrs": {},
+      "allowNoIndex": false,
+      "name": "Campus request logs",
+      "allowHidden": false,
+      "fields": {
+        "@timestamp": {
+          "count": 0,
+          "name": "@timestamp",
+          "type": "date",
+          "esTypes": [
+            "date"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "date"
+          },
+          "shortDotsEnable": false
+        },
+        "_id": {
+          "count": 0,
+          "name": "_id",
+          "type": "string",
+          "esTypes": [
+            "_id"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": false,
+          "readFromDocValues": false,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "_ignored": {
+          "count": 0,
+          "name": "_ignored",
+          "type": "string",
+          "esTypes": [
+            "_ignored"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": false,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "_index": {
+          "count": 0,
+          "name": "_index",
+          "type": "string",
+          "esTypes": [
+            "_index"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": false,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "_score": {
+          "count": 0,
+          "name": "_score",
+          "type": "number",
+          "scripted": false,
+          "searchable": false,
+          "aggregatable": false,
+          "readFromDocValues": false,
+          "format": {
+            "id": "number"
+          },
+          "shortDotsEnable": false
+        },
+        "_source": {
+          "count": 0,
+          "name": "_source",
+          "type": "_source",
+          "esTypes": [
+            "_source"
+          ],
+          "scripted": false,
+          "searchable": false,
+          "aggregatable": false,
+          "readFromDocValues": false,
+          "format": {
+            "id": "_source"
+          },
+          "shortDotsEnable": false
+        },
+        "delay_ms": {
+          "count": 0,
+          "name": "delay_ms",
+          "type": "number",
+          "esTypes": [
+            "integer"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "number"
+          },
+          "shortDotsEnable": false
+        },
+        "duration_ms": {
+          "count": 0,
+          "name": "duration_ms",
+          "type": "number",
+          "esTypes": [
+            "double"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "number"
+          },
+          "shortDotsEnable": false
+        },
+        "error_type": {
+          "count": 0,
+          "name": "error_type",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "message": {
+          "count": 0,
+          "name": "message",
+          "type": "string",
+          "esTypes": [
+            "text"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": false,
+          "readFromDocValues": false,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "method": {
+          "count": 0,
+          "name": "method",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "operation": {
+          "count": 0,
+          "name": "operation",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "request_id": {
+          "count": 0,
+          "name": "request_id",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "route": {
+          "count": 0,
+          "name": "route",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "service": {
+          "count": 0,
+          "name": "service",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "severity": {
+          "count": 0,
+          "name": "severity",
+          "type": "string",
+          "esTypes": [
+            "keyword"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "string"
+          },
+          "shortDotsEnable": false
+        },
+        "status_code": {
+          "count": 0,
+          "name": "status_code",
+          "type": "number",
+          "esTypes": [
+            "integer"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "number"
+          },
+          "shortDotsEnable": false
+        },
+        "timestamp": {
+          "count": 0,
+          "name": "timestamp",
+          "type": "date",
+          "esTypes": [
+            "date"
+          ],
+          "scripted": false,
+          "searchable": true,
+          "aggregatable": true,
+          "readFromDocValues": true,
+          "format": {
+            "id": "date"
+          },
+          "shortDotsEnable": false
+        }
+      },
+      "namespaces": [
+        "default"
+      ]
+    }
+  },
+  "elastic_mapping": {
+    "campus-logs-000002": {
+      "mappings": {
+        "dynamic": "false",
+        "properties": {
+          "@timestamp": {
+            "type": "date"
+          },
+          "delay_ms": {
+            "type": "integer"
+          },
+          "duration_ms": {
+            "type": "double"
+          },
+          "error_type": {
+            "type": "keyword"
+          },
+          "message": {
+            "type": "match_only_text"
+          },
+          "method": {
+            "type": "keyword"
+          },
+          "operation": {
+            "type": "keyword"
+          },
+          "request_id": {
+            "type": "keyword",
+            "ignore_above": 64
+          },
+          "route": {
+            "type": "keyword"
+          },
+          "service": {
+            "type": "keyword"
+          },
+          "severity": {
+            "type": "keyword"
+          },
+          "status_code": {
+            "type": "integer"
+          },
+          "timestamp": {
+            "type": "date"
+          }
+        }
+      }
+    },
+    "campus-logs-000001": {
+      "mappings": {
+        "dynamic": "false",
+        "properties": {
+          "@timestamp": {
+            "type": "date"
+          },
+          "delay_ms": {
+            "type": "integer"
+          },
+          "duration_ms": {
+            "type": "double"
+          },
+          "error_type": {
+            "type": "keyword"
+          },
+          "message": {
+            "type": "match_only_text"
+          },
+          "method": {
+            "type": "keyword"
+          },
+          "operation": {
+            "type": "keyword"
+          },
+          "request_id": {
+            "type": "keyword",
+            "ignore_above": 64
+          },
+          "route": {
+            "type": "keyword"
+          },
+          "service": {
+            "type": "keyword"
+          },
+          "severity": {
+            "type": "keyword"
+          },
+          "status_code": {
+            "type": "integer"
+          },
+          "timestamp": {
+            "type": "date"
+          }
+        }
+      }
+    }
+  },
+  "correlated_smoke_logs": {
+    "took": 37,
+    "timed_out": false,
+    "_shards": {
+      "total": 2,
+      "successful": 2,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 3,
+        "relation": "eq"
+      },
+      "max_score": 12.17078,
+      "hits": [
+        {
+          "_index": "campus-logs-000001",
+          "_id": "L9lGw6ABWC29OxUMPwo4",
+          "_score": 12.17078,
+          "_source": {
+            "@timestamp": "2026-09-21T09:22:33.302Z",
+            "method": "POST",
+            "agent": {
+              "version": "8.19.0",
+              "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+              "name": "c8800ac23c1f",
+              "type": "filebeat"
+            },
+            "duration_ms": 64.258,
+            "operation": "http_request",
+            "request_id": "demo-booking-001",
+            "timestamp": "2026-09-21T09:22:33.302915+00:00",
+            "status_code": 201,
+            "log": {
+              "offset": 1521,
+              "file": {
+                "path": "/var/log/campus/app.jsonl",
+                "device_id": "2096",
+                "inode": "55094"
+              }
+            },
+            "severity": "INFO",
+            "message": "request_completed",
+            "service": "campus-booking",
+            "route": "/bookings"
+          }
+        },
+        {
+          "_index": "campus-logs-000002",
+          "_id": "J2l9zKABPRirUY7a7ojA",
+          "_score": 11.780687,
+          "_source": {
+            "@timestamp": "2026-09-23T04:19:54.912Z",
+            "message": "request_completed",
+            "agent": {
+              "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+              "name": "342412dc9ecc",
+              "type": "filebeat",
+              "version": "8.19.0"
+            },
+            "service": "campus-booking",
+            "request_id": "demo-booking-001",
+            "operation": "http_request",
+            "log": {
+              "offset": 9433858,
+              "file": {
+                "path": "/var/log/campus/app.jsonl",
+                "device_id": "2112",
+                "inode": "61088"
+              }
+            },
+            "duration_ms": 9.969,
+            "severity": "INFO",
+            "method": "POST",
+            "route": "/bookings",
+            "timestamp": "2026-09-23T04:19:54.912866+00:00",
+            "status_code": 201
+          }
+        },
+        {
+          "_index": "campus-logs-000002",
+          "_id": "C2V7zKABPRirUY7abR2o",
+          "_score": 11.780687,
+          "_source": {
+            "@timestamp": "2026-09-21T09:22:33.302Z",
+            "agent": {
+              "type": "filebeat",
+              "version": "8.19.0",
+              "id": "86b2337d-b16c-410e-aaed-b847c69527b9",
+              "name": "342412dc9ecc"
+            },
+            "log": {
+              "file": {
+                "inode": "55094",
+                "path": "/var/log/campus/app.jsonl.7",
+                "device_id": "2112"
+              },
+              "offset": 1521
+            },
+            "timestamp": "2026-09-21T09:22:33.302915+00:00",
+            "duration_ms": 64.258,
+            "message": "request_completed",
+            "service": "campus-booking",
+            "operation": "http_request",
+            "method": "POST",
+            "status_code": 201,
+            "severity": "INFO",
+            "route": "/bookings",
+            "request_id": "demo-booking-001"
+          }
+        }
+      ]
+    }
+  }
+}

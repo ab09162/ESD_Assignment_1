@@ -90,7 +90,10 @@ def main():
     ]
     counts = {}
     for name in required:
-        result = get(prometheus, "/api/v1/query?" + urlencode({"query": f"count({name})"}))
+        query = {"query": f"count({name})"}
+        if args.at:
+            query["time"] = args.at
+        result = get(prometheus, "/api/v1/query?" + urlencode(query))
         vector = result["data"]["result"]
         assert vector, f"Required metric absent: {name}"
         counts[name] = int(vector[0]["value"][1])

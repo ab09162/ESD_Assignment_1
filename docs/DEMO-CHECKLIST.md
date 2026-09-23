@@ -1,3 +1,5 @@
+Current beginner workflow: open the project-root SCREENSHOT-CHECKLIST.pdf or SCREENSHOT-CHECKLIST.txt. Their prepared links use the fresh 23 September run. The older sequence below is retained as technical reference.
+
 # Remaining manual browser screenshots
 
 All Docker tests/experiments below have already run; rerunning them is not required to capture stored historical charts. Browser rendering was not accessible to automation. Open the real pages, confirm panels render, and capture screenshots yourself. No screenshots have been fabricated.

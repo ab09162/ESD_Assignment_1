@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-23",
+  "run": "submission-20260923T041613Z",
+  "generated_utc": "2026-09-23T09:21:33.247023+00:00",
+  "draft": false,
+  "evidence": "docs/evidence/latest",
+  "baseline": {
+    "start": "2026-09-23T04:20:01.7847170Z",
+    "end": "2026-09-23T04:22:04.4640878Z",
+    "rps": 159.35140984287213,
+    "requests": 19156,
+    "p95": 48.152576499999995,
+    "p99": 66.56970155000003,
+    "errors": 0
+  },
+  "anomaly": [
+    {
+      "phase": "baseline",
+      "start": "2026-09-23T04:22:08.9399646Z",
+      "end": "2026-09-23T04:24:11.1910462Z",
+      "exit_code": 0,
+      "rps": 154.9157661111606,
+      "requests": 18604,
+      "p95": 52.105895749999995,
+      "p99": 70.68639603000005,
+      "errors": 0
+    },
+    {
+      "phase": "fault",
+      "start": "2026-09-23T04:29:25.3131975Z",
+      "end": "2026-09-23T04:31:28.7047914Z",
+      "exit_code": 0,
+      "rps": 66.22653832015656,
+      "requests": 8031,
+      "p95": 516.3207695000001,
+      "p99": 526.4930098,
+      "errors": 0
+    },
+    {
+      "phase": "recovery",
+      "start": "2026-09-23T04:36:43.1053075Z",
+      "end": "2026-09-23T04:38:46.0826790Z",
+      "exit_code": 0,
+      "rps": 157.70684135233367,
+      "requests": 18975,
+      "p95": 53.4860603,
+      "p99": 71.44389231999993,
+      "errors": 0
+    }
+  ],
+  "request_id": "verify-0c74ea91-41be-4bab-864b-80388a2d07d4",
+  "kibana_query": "request_id : \"verify-0c74ea91-41be-4bab-864b-80388a2d07d4\"",
+  "tests": {
+    "passed": 26,
+    "seconds": 3.46
+  },
+  "concurrency": {
+    "winners": 1,
+    "conflicts": 19
+  },
+  "screenshots": [
+    {
+      "number": "01",
+      "filename": "01-docker-services.png",
+      "url": "http://localhost:8011/#services",
+      "page": "Recorded Docker service verification",
+      "time": "Use the fresh verification time shown on the page.",
+      "must": "All eight required service names, healthy status, the actual docker compose ps command and capture time.",
+      "why": "Proves the complete assignment stack was running.",
+      "action": "Open the link and capture the Services evidence card; it is a clearly labelled real command snapshot.",
+      "short_url": "http://localhost:8011/go/01"
+    },
+    {
+      "number": "02",
+      "filename": "02-api-swagger.png",
+      "url": "http://localhost:8000/docs",
+      "page": "Swagger: GET /rooms",
+      "time": "Current time; no historical filter.",
+      "must": "API title, GET /rooms, HTTP 200 and the returned rooms.",
+      "why": "Shows the application is usable and backed by real data.",
+      "action": "Expand GET /rooms, click Try it out, then Execute; capture the 200 response and rooms.",
+      "short_url": "http://localhost:8011/go/02"
+    },
+    {
+      "number": "03",
+      "filename": "03-prometheus-targets.png",
+      "url": "http://localhost:9090/targets",
+      "page": "Prometheus Targets",
+      "time": "Current time.",
+      "must": "campus-app, node-exporter and prometheus UP; cardinality-demo should also be UP.",
+      "why": "Proves the metric collectors are connected.",
+      "action": "Open the link. Wait for the page to finish loading, then capture the indicated content.",
+      "short_url": "http://localhost:8011/go/03"
+    },
+    {
+      "number": "04",
+      "filename": "04-grafana-overview.png",
+      "url": "http://localhost:3000/d/campus-app?from=1790137201784&to=1790137324464&timezone=utc&refresh=",
+      "page": "Campus application: panels 1-6",
+      "time": "UTC: 2026-09-23 04:20:01.784 to 2026-09-23 04:22:04.464; Pakistan time: 2026-09-23 09:20:01.784 to 2026-09-23 09:22:04.464",
+      "must": "Requests per second, successful requests, 5xx/error percentage and p95/p99 charts with actual traces.",
+      "why": "Shows the core observability dashboard.",
+      "action": "Open the prepared range; capture the top six panels. Close the side menu if it takes up space.",
+      "short_url": "http://localhost:8011/go/04"
+    },
+    {
+      "number": "05",
+      "filename": "05-grafana-throughput.png",
+      "url": "http://localhost:3000/d/campus-load?from=1790137201784&to=1790137324464&timezone=utc&refresh=&viewPanel=2",
+      "page": "Campus load: Server throughput",
+      "time": "UTC: 2026-09-23 04:20:01.784 to 2026-09-23 04:22:04.464; Pakistan time: 2026-09-23 09:20:01.784 to 2026-09-23 09:22:04.464",
+      "must": "Server throughput title, request-rate trace, req/s units and selected UTC time range.",
+      "why": "Records real throughput under the fresh k6 baseline.",
+      "action": "Open the link. Wait for the page to finish loading, then capture the indicated content.",
+      "short_url": "http://localhost:8011/go/05"
+    },
+    {
+      "number": "06",
+      "filename": "06-grafana-p95-p99.png",
+      "url": "http://localhost:3000/d/campus-load?from=1790137201784&to=1790137324464&timezone=utc&refresh=&viewPanel=3",
+      "page": "Campus load: Server p95 / p99",
+      "time": "UTC: 2026-09-23 04:20:01.784 to 2026-09-23 04:22:04.464; Pakistan time: 2026-09-23 09:20:01.784 to 2026-09-23 09:22:04.464",
+      "must": "Both p95 and p99 traces, latency units, legend and selected UTC range.",
+      "why": "Shows tail latency rather than relying only on averages.",
+      "action": "Open the link. Wait for the page to finish loading, then capture the indicated content.",
+      "short_url": "http://localhost:8011/go/06"
+    },
+    {
+      "number": "07",
+      "filename": "07-grafana-business-metrics.png",
+      "url": "http://localhost:3000/d/campus-app?from=1790137201784&to=1790137324464&timezone=utc&refresh=",
+      "page": "Campus application: booking panels 11-16",
+      "time": "UTC: 2026-09-23 04:20:01.784 to 2026-09-23 04:22:04.464; Pakistan time: 2026-09-23 09:20:01.784 to 2026-09-23 09:22:04.464",
+      "must": "Booking creation, cancellation, conflicts and Booking conflict percentage (own exploration).",
+      "why": "Demonstrates domain-specific metrics and the derived exploration metric.",
+      "action": "Scroll to Booking creation rate; capture panels 11-16 together. Use Ctrl+- once or twice if needed, then Ctrl+0 afterwards.",
+      "short_url": "http://localhost:8011/go/07"
+    },
+    {
+      "number": "08",
+      "filename": "08-node-exporter.png",
+      "url": "http://localhost:3000/d/campus-node?from=1790137201784&to=1790137324464&timezone=utc&refresh=",
+      "page": "Campus node: all six panels",
+      "time": "UTC: 2026-09-23 04:20:01.784 to 2026-09-23 04:22:04.464; Pakistan time: 2026-09-23 09:20:01.784 to 2026-09-23 09:22:04.464",
+      "must": "CPU, memory, disk usage, disk I/O, network receive/transmit and Linux VM label.",
+      "why": "Proves resource data exists and identifies the Linux/WSL2 scope.",
+      "action": "Capture all six panels; use Ctrl+- if needed. This is the Docker Linux/WSL2 environment, not native Windows monitoring.",
+      "short_url": "http://localhost:8011/go/08"
+    },
+    {
+      "number": "09",
+      "filename": "09-kibana-request-id.png",
+      "url": "http://localhost:5601/app/discover#/?_g=%28time%3A%28from%3A%272026-09-23T04%3A19%3A25.674Z%27%2Cto%3A%272026-09-23T04%3A20%3A25.674Z%27%29%29&_a=%28columns%3A%21%28request_id%2Cmethod%2Croute%2Cstatus_code%2Cduration_ms%2Cseverity%2Cmessage%29%2CdataSource%3A%28dataViewId%3Acampus-logs%2Ctype%3AdataView%29%2Cfilters%3A%21%28%29%2Cquery%3A%28language%3Akuery%2Cquery%3A%27request_id+%3A+%22verify-0c74ea91-41be-4bab-864b-80388a2d07d4%22%27%29%2Csort%3A%21%28%21%28%27%40timestamp%27%2Cdesc%29%29%29",
+      "page": "Kibana Discover: Campus request logs",
+      "time": "UTC: 2026-09-23 04:19:25.674 to 2026-09-23 04:20:25.674; Pakistan time: 2026-09-23 09:19:25.674 to 2026-09-23 09:20:25.674",
+      "must": "Request ID verify-0c74ea91-41be-4bab-864b-80388a2d07d4; method, route, status_code, duration_ms, severity and message. Expand the matching document.",
+      "why": "Proves a fresh request travelled through Filebeat into searchable structured logs.",
+      "action": "Open the prepared search. If prompted, choose Campus request logs. Expand the matching row with the arrow on its left.",
+      "short_url": "http://localhost:8011/go/09"
+    },
+    {
+      "number": "10",
+      "filename": "10-anomaly-baseline-fault-recovery.png",
+      "url": "http://localhost:3000/d/campus-load?from=1790137328939&to=1790138326082&timezone=utc&refresh=&viewPanel=3",
+      "page": "Campus load: Server p95 / p99 across all three phases",
+      "time": "UTC: 2026-09-23 04:22:08.939 to 2026-09-23 04:38:46.082; Pakistan time: 2026-09-23 09:22:08.939 to 2026-09-23 09:38:46.082",
+      "must": "Low baseline latency, increased fault latency and lower recovery latency, with the UTC axis and legend.",
+      "why": "Shows the reproduced problem and recovery in one chart. Quiet gaps are intentional cooldowns.",
+      "action": "Open the link. Wait for the page to finish loading, then capture the indicated content.",
+      "short_url": "http://localhost:8011/go/10"
+    },
+    {
+      "number": "11",
+      "filename": "11-cardinality-100-series.png",
+      "url": "http://localhost:9090/query?g0.expr=count%28demo_requests_total%7Bjob%3D%22cardinality-demo%22%7D%29&g0.tab=table&g0.end_input=2026-09-23+04%3A39%3A46.493&g0.moment_input=2026-09-23+04%3A39%3A46.493&g0.range_input=1m",
+      "page": "Prometheus Table; query: count(demo_requests_total{job=\"cardinality-demo\"})",
+      "time": "UTC: 2026-09-23 04:39:46.493 to 2026-09-23 04:39:46.493; Pakistan time: 2026-09-23 09:39:46.493 to 2026-09-23 09:39:46.493",
+      "must": "The complete query, historical evaluation time and result 100.",
+      "why": "Compares unique-ID label growth with the correct bounded metric.",
+      "action": "Open the prepared historical query; if the result is not shown, click Execute. Do not switch the time to Now.",
+      "short_url": "http://localhost:8011/go/11"
+    },
+    {
+      "number": "12",
+      "filename": "12-cardinality-1-series.png",
+      "url": "http://localhost:9090/query?g0.expr=count%28demo_requests_total%7Bjob%3D%22cardinality-demo%22%7D%29&g0.tab=table&g0.end_input=2026-09-23+04%3A39%3A55.419&g0.moment_input=2026-09-23+04%3A39%3A55.419&g0.range_input=1m",
+      "page": "Prometheus Table; query: count(demo_requests_total{job=\"cardinality-demo\"})",
+      "time": "UTC: 2026-09-23 04:39:55.419 to 2026-09-23 04:39:55.419; Pakistan time: 2026-09-23 09:39:55.419 to 2026-09-23 09:39:55.419",
+      "must": "The complete query, historical evaluation time and result 1.",
+      "why": "Compares unique-ID label growth with the correct bounded metric.",
+      "action": "Open the prepared historical query; if the result is not shown, click Execute. Do not switch the time to Now.",
+      "short_url": "http://localhost:8011/go/12"
+    },
+    {
+      "number": "13",
+      "filename": "13-tests-passed.png",
+      "url": "http://localhost:8011/#tests",
+      "page": "Recorded PostgreSQL test output",
+      "time": "Fresh test run shown on the page.",
+      "must": "Actual pytest progress and 26 passed in 3.46s; the Docker test command and evidence location.",
+      "why": "Shows the complete suite passed against real PostgreSQL.",
+      "action": "Open the link. Wait for the page to finish loading, then capture the indicated content.",
+      "short_url": "http://localhost:8011/go/13"
+    },
+    {
+      "number": "14",
+      "filename": "14-concurrency-test.png",
+      "url": "http://localhost:8011/#concurrency",
+      "page": "Recorded k6 concurrent-booking result",
+      "time": "Fresh concurrency run shown on the page.",
+      "must": "1 winner, 19 conflicts, passed checks and the command used.",
+      "why": "Proves competing requests cannot double-book the same slot.",
+      "action": "Open the link. Wait for the page to finish loading, then capture the indicated content.",
+      "short_url": "http://localhost:8011/go/14"
+    },
+    {
+      "number": "15",
+      "filename": "15-fault-request-id.png",
+      "url": "http://localhost:5601/app/discover#/?_g=%28time%3A%28from%3A%272026-09-23T04%3A29%3A25.3131975Z%27%2Cto%3A%272026-09-23T04%3A31%3A28.7047914Z%27%29%29&_a=%28columns%3A%21%28request_id%2Cmethod%2Croute%2Cstatus_code%2Cduration_ms%2Cseverity%2Cmessage%29%2CdataSource%3A%28dataViewId%3Acampus-logs%2Ctype%3AdataView%29%2Cfilters%3A%21%28%29%2Cquery%3A%28language%3Akuery%2Cquery%3A%27request_id+%3A+%22b5d0153e-b4a9-425b-a30a-73942337346d%22%27%29%2Csort%3A%21%28%21%28%27%40timestamp%27%2Cdesc%29%29%29",
+      "page": "Kibana Discover: matching injected-delay and completion records",
+      "time": "UTC: 2026-09-23 04:29:25.313 to 2026-09-23 04:31:28.704; Pakistan time: 2026-09-23 09:29:25.313 to 2026-09-23 09:31:28.704",
+      "must": "Request ID b5d0153e-b4a9-425b-a30a-73942337346d, fault_delay_injected with delay_ms=500 and the matching slow request_completed duration.",
+      "why": "Connects the latency increase to the injected fault, rather than guessing its cause.",
+      "action": "Expand the fault warning and completion records with the same request ID; show delay_ms and duration_ms.",
+      "short_url": "http://localhost:8011/go/15"
+    }
+  ]
+}

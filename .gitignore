@@ -3,6 +3,7 @@
 !.env.example
 .venv/
 .tmp/
+tmp/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -16,3 +17,8 @@ results/*
 dist/
 build/
 .tools/
+
+# Desktop metadata (keep manually captured evidence images)
+Thumbs.db
+Desktop.ini
+.DS_Store

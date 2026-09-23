@@ -84,17 +84,22 @@ def main():
     assert lifecycle and all(
         v["managed"] and v["policy"] == "campus-logs-7d" for v in lifecycle.values()
     )
-    metric = api(
-        prom,
-        "/api/v1/query?"
-        + urlencode(
-            {
-                "query": "http_request_duration_seconds_count"
-                '{route="/bookings",method="POST",status="201"}'
-            }
-        ),
-    )
-    assert metric["data"]["result"], "Histogram observations not scraped yet"
+    # Filebeat may index the request before the next Prometheus scrape.
+    for _attempt in range(15):
+        metric = api(
+            prom,
+            "/api/v1/query?"
+            + urlencode(
+                {
+                    "query": "http_request_duration_seconds_count"
+                    '{route="/bookings",method="POST",status="201"}'
+                }
+            ),
+        )
+        if metric["data"]["result"]:
+            break
+        time.sleep(2)
+    assert metric["data"]["result"], "Histogram observations not scraped within 30s"
     print(
         json.dumps(
             {

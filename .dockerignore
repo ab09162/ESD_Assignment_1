@@ -4,6 +4,10 @@
 !.env.example
 .venv
 .tmp
+tmp
+*.pdf
+*.png
+SUBMISSION-EVIDENCE.html
 .tools
 __pycache__
 .pytest_cache
